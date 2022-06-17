@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NavigationButton : MonoBehaviour
+public class CreateCharacterButton : MonoBehaviour
 {
     public GameObject Panel;
     public GameObject OldPanel;
