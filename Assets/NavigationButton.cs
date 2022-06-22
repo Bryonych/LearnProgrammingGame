@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateCharacterButton : MonoBehaviour
+public class NavigationButton : MonoBehaviour
 {
     public GameObject Panel;
     public GameObject OldPanel;
@@ -16,4 +16,20 @@ public class CreateCharacterButton : MonoBehaviour
         }
         
     } 
+
+    public void RemoveCharacter() {
+        GameObject character = GameObject.Find("Body");
+        character.SetActive(false);
+        GameObject shorts = GameObject.Find("Bottoms");
+        shorts.SetActive(false);
+    }
+
+    public void AddCharacter() {
+        GameObject character = GameObject.Find("Body");
+        character.SetActive(true);
+        GameObject shorts = GameObject.Find("Bottoms");
+        shorts.SetActive(true);
+    }
+    
+
 }

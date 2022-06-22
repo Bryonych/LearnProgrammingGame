@@ -17,6 +17,10 @@ public class Character : ScriptableObject {
     public GameObject bottoms;
     public GameObject shoes;
 
-
+    public bool hasHair = false;
+    public bool hasHat = false;
+    public bool hasGlasses = false;
+    public bool hasMask = false;
+    public bool hasShoes = false;
   
 }

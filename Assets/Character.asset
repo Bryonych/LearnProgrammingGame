@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   age: 0
-  body: {fileID: 0}
+  body: {fileID: 1397278167, guid: c1d8db471fe3fea48932e52f563b2bf7, type: 3}
   hair: {fileID: 0}
   hat: {fileID: 0}
   glasses: {fileID: 0}
