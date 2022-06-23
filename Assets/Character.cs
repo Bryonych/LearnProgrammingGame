@@ -22,5 +22,7 @@ public class Character : ScriptableObject {
     public bool hasGlasses = false;
     public bool hasMask = false;
     public bool hasShoes = false;
+
+    public char bodyShape;
   
 }

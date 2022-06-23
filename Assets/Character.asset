@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e29f080faf824c4ea463de275031528, type: 3}
   m_Name: Character
   m_EditorClassIdentifier: 
-  name: 
-  age: 0
-  body: {fileID: 1397278167, guid: c1d8db471fe3fea48932e52f563b2bf7, type: 3}
+  name: '"jo"'
+  age: 17
+  body: {fileID: 0}
   hair: {fileID: 0}
   hat: {fileID: 0}
   glasses: {fileID: 0}
@@ -22,3 +22,9 @@ MonoBehaviour:
   top: {fileID: 0}
   bottoms: {fileID: 0}
   shoes: {fileID: 0}
+  hasHair: 1
+  hasHat: 0
+  hasGlasses: 1
+  hasMask: 0
+  hasShoes: 1
+  bodyShape: 115

@@ -17,6 +17,13 @@ public class NavigationButton : MonoBehaviour
         
     } 
 
+    public void MoveCharacterToMiddle() {
+        GameObject body = GameObject.Find("Body");
+        body.transform.position = new Vector3(0, 0, 0);
+        GameObject bottoms = GameObject.Find("Bottoms");
+        bottoms.transform.position = new Vector3(0, 0, 0);
+    }
+
     public void RemoveCharacter() {
         GameObject character = GameObject.Find("Body");
         character.SetActive(false);

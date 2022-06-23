@@ -18,6 +18,12 @@ public class CreateCharacter : MonoBehaviour
         character.body = body;
         SpriteRenderer sr = character.body.GetComponent<SpriteRenderer>();
         sr.sprite = bd; 
+        if (bd.name.StartsWith('S')) {
+            character.bodyShape = 's';
+        }
+        else {
+            character.bodyShape = 'h';
+        }
     }
 
 
