@@ -35,7 +35,7 @@ public class AddHat : MonoBehaviour
             if (hat == null) {
                 hat = GameObject.Find("Hat");
             }
-            hat.SetActive(true);
+            hat.SetActive(false);
             character.hat = hat;
             SpriteRenderer sr = character.hat.GetComponent<SpriteRenderer>();
             if (text == "\"cap\"") {
@@ -44,6 +44,7 @@ public class AddHat : MonoBehaviour
             else if (text == "\"top hat\"") {
                 sr.sprite = topHat;
             }
+            character.addPart(character.hat);
         }
         else {
             errorText.text = "Inputs are either \"cap\" or \"top hat\"";

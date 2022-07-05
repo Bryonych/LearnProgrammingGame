@@ -33,7 +33,7 @@ public class AddGlasses : MonoBehaviour
             if (glasses == null) {
                 glasses = GameObject.Find("Glasses");
             }
-            glasses.SetActive(true);
+            glasses.SetActive(false);
             character.glasses = glasses;
             SpriteRenderer sr = character.glasses.GetComponent<SpriteRenderer>();
             if (text == "\"glasses\"") {
@@ -42,6 +42,7 @@ public class AddGlasses : MonoBehaviour
             else if (text == "\"sun glasses\"") {
                 sr.sprite = sunglasses;
             }
+            character.addPart(character.glasses);
         }
         else {
             errorText.text = "Inputs are either \"glasses\" or \"sun glasses\"";

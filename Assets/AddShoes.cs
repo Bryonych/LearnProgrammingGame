@@ -37,7 +37,7 @@ public class AddShoes : MonoBehaviour
             if (footwear == null) {
                 footwear = GameObject.Find("Shoes");
             }
-            footwear.SetActive(true);
+            footwear.SetActive(false);
             print(footwear);
             character.shoes = footwear;
             SpriteRenderer sr = character.shoes.GetComponent<SpriteRenderer>();
@@ -56,6 +56,7 @@ public class AddShoes : MonoBehaviour
             else {
                 print("Body shape may not have been set up?");
             }
+            character.addPart(character.shoes);
         }
         else {
             errorText.text = "Inputs are either \"shoes\" or \"boots\"";

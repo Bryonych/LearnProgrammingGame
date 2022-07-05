@@ -6,6 +6,7 @@ public class NavigationButton : MonoBehaviour
 {
     public GameObject Panel;
     public GameObject OldPanel;
+    public Character character;
 
     public void OpenPanel() {
         if (OldPanel != null) {
@@ -25,17 +26,16 @@ public class NavigationButton : MonoBehaviour
     }
 
     public void RemoveCharacter() {
-        GameObject character = GameObject.Find("Body");
-        character.SetActive(false);
-        GameObject shorts = GameObject.Find("Bottoms");
-        shorts.SetActive(false);
+        foreach (GameObject go in character.getParts()) {
+            go.SetActive(false);
+        }
     }
 
     public void AddCharacter() {
-        GameObject character = GameObject.Find("Body");
-        character.SetActive(true);
-        GameObject shorts = GameObject.Find("Bottoms");
-        shorts.SetActive(true);
+        print("number of parts: " + character.getParts().Count);
+         foreach (GameObject go in character.getParts()) {
+            go.SetActive(true);
+        }
     }
     
 

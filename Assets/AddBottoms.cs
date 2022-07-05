@@ -31,7 +31,7 @@ public class AddBottoms : MonoBehaviour
             if (bottoms == null) {
                 bottoms = GameObject.Find("Bottoms");
             }
-            bottoms.SetActive(true);
+            bottoms.SetActive(false);
             character.bottoms = bottoms;
             SpriteRenderer sr = character.bottoms.GetComponent<SpriteRenderer>();
             if (character.bodyShape == 's' && text == "\"trousers\"") {
@@ -49,6 +49,7 @@ public class AddBottoms : MonoBehaviour
             else {
                 print("Body shape may not have been set up?");
             }
+            character.addPart(character.bottoms);
         }
         else {
             errorText.text = "Inputs are either \"trousers\" or \"shorts\"";

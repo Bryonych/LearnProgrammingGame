@@ -8,6 +8,12 @@ public class CreateCharacter : MonoBehaviour
     public Character character;
     GameObject body;
     GameObject bottoms;
+    GameObject hair;
+    GameObject hat;
+    GameObject glasses;
+    GameObject mask;
+    GameObject top;
+    GameObject shoes;
     
     
     public void SelectBody(Sprite bd) {
@@ -18,6 +24,7 @@ public class CreateCharacter : MonoBehaviour
         character.body = body;
         SpriteRenderer sr = character.body.GetComponent<SpriteRenderer>();
         sr.sprite = bd; 
+        // character.addPart(body);
         if (bd.name.StartsWith('S')) {
             character.bodyShape = 's';
         }
@@ -27,35 +34,60 @@ public class CreateCharacter : MonoBehaviour
     }
 
 
-    public void SelectHair(Sprite h) {
-        character.hair = new GameObject();
-        SpriteRenderer sr = character.hair.GetComponent<SpriteRenderer>();
-        sr.sprite = h;
-    }
+    // public void SelectHair(Sprite h) {
+    //     if (hair == null) {
+    //         hair = GameObject.Find("Hair");
+    //     }
+    //     character.hair = hair;
+    //     SpriteRenderer sr = character.hair.GetComponent<SpriteRenderer>();
+    //     sr.sprite = h;
+    //     // character.addPart(character.hair);
+    //     // character.hair.SetActive(false);
+    // }
 
-    public void SelectHat(Sprite ha) {
-        character.hat = new GameObject();
-        SpriteRenderer sr = character.hat.GetComponent<SpriteRenderer>();
-        sr.sprite = ha;
-    }
+    // public void SelectHat(Sprite ha) {
+    //     if (hat == null) {
+    //         hat = GameObject.Find("Hat");
+    //     }
+    //     character.hat = hat;
+    //     SpriteRenderer sr = character.hat.GetComponent<SpriteRenderer>();
+    //     sr.sprite = ha;
+    //     // character.addPart(character.hat);
+    //     // character.hat.SetActive(false);
+    // }
 
-    public void SelectGlasses(Sprite g) {
-        character.glasses = new GameObject();
-        SpriteRenderer sr = character.glasses.GetComponent<SpriteRenderer>();
-        sr.sprite = g;
-    }
+    // public void SelectGlasses(Sprite g) {
+    //     if (glasses == null) {
+    //         glasses = GameObject.Find("Glasses");
+    //     }
+    //     character.glasses = glasses;
+    //     SpriteRenderer sr = character.glasses.GetComponent<SpriteRenderer>();
+    //     sr.sprite = g;
+    //     // character.addPart(character.glasses);
+    //     // character.glasses.SetActive(false);
+    // }
 
-    public void SelectMask(Sprite m) {
-        character.mask = new GameObject();
-        SpriteRenderer sr = character.mask.GetComponent<SpriteRenderer>();
-        sr.sprite = m;
-    }
+    // public void SelectMask(Sprite m) {
+    //     if (mask == null) {
+    //         mask = GameObject.Find("Mask");
+    //     }
+    //     character.mask = mask;
+    //     SpriteRenderer sr = character.mask.GetComponent<SpriteRenderer>();
+    //     sr.sprite = m;
+    //     // character.addPart(character.mask);
+    //     // character.mask.SetActive(false);
+    // }
 
-    public void SelectTop(Sprite t) {
-        character.top = new GameObject();
-        SpriteRenderer sr = character.top.GetComponent<SpriteRenderer>();
-        sr.sprite = t;
-    }
+    // public void SelectTop(Sprite t) {
+    //     if (top == null) {
+    //         top = GameObject.Find("Top");
+    //     }
+    //     character.top = top;
+    //     SpriteRenderer sr = character.top.GetComponent<SpriteRenderer>();
+    //     sr.sprite = t;
+    //     // character.addPart(character.top);
+    //     // character.top.SetActive(false);
+    // }
 
     public void SelectBottoms(Sprite b) {
         if (bottoms == null) {
@@ -65,14 +97,18 @@ public class CreateCharacter : MonoBehaviour
         character.bottoms = bottoms;
         SpriteRenderer sr = character.bottoms.GetComponent<SpriteRenderer>();
         sr.sprite = b;
+        // character.addPart(character.bottoms);
     }
 
-    public void SelectShoes(Sprite s) {
-        character.shoes = new GameObject();
-        SpriteRenderer sr = character.shoes.GetComponent<SpriteRenderer>();
-        sr.sprite = s;
-    }
-
-
+    // public void SelectShoes(Sprite s) {
+    //     if (shoes == null) {
+    //         shoes = GameObject.Find("Shoes");
+    //     }
+    //     character.shoes = shoes;
+    //     SpriteRenderer sr = character.shoes.GetComponent<SpriteRenderer>();
+    //     sr.sprite = s;
+    //     // character.addPart(character.shoes);
+    //     // character.shoes.SetActive(false);
+    // }
 
 }

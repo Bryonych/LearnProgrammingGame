@@ -36,7 +36,7 @@ public class AddHair : MonoBehaviour
             if (hair == null) {
                 hair = GameObject.Find("Hair");
             }
-            hair.SetActive(true);
+            hair.SetActive(false);
             character.hair = hair;
             SpriteRenderer sr = character.hair.GetComponent<SpriteRenderer>();
             if (text == "\"long green\"") {
@@ -51,6 +51,7 @@ public class AddHair : MonoBehaviour
             else if (text == "\"short orange\"") {
                 sr.sprite = shortOrange;
             }
+            character.addPart(character.hair);
         }
         else {
             errorText.text = "Inputs are either \"long green\" or \"short black\" or \"dreads\" or \"short orange\"";

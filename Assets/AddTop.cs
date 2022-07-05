@@ -31,7 +31,7 @@ public class AddTop : MonoBehaviour
             if (top == null) {
                 top = GameObject.Find("Top");
             }
-            top.SetActive(true);
+            top.SetActive(false);
             character.top = top;
             SpriteRenderer sr = character.top.GetComponent<SpriteRenderer>();
             if (character.bodyShape == 's' && text == "\"jacket\"") {
@@ -49,6 +49,7 @@ public class AddTop : MonoBehaviour
             else {
                 print("Body shape may not have been set up?");
             }
+            character.addPart(character.top);
         }
         else {
             errorText.text = "Inputs are either \"jacket\" or \"t-shirt\"";

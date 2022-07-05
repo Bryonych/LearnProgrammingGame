@@ -42,53 +42,25 @@ public class CheckLogic : MonoBehaviour {
                     character.age = age;
                 }
             }
-            else if (currentField.name == "HasHairInputField") {
-                print(newText);
-                if (newText == "true") {
-                    character.hasHair = true;
-                }
-                else if (newText == "false") {
-                    character.hasHair = false;
-                }
-                else {
-                    errorText.text = "Must be true or false";
-                    errorWindow.SetActive(true);
-                }
-            }
-            else if (currentField.name == "WearsHatInputField") {
+            else {
                 if (newText != "true" && newText != "false") {
                     errorText.text = "Must be true or false";
                     errorWindow.SetActive(true);
                 }
-                else if (newText == "true") {
-                    character.hasHat = true;
+                else if (currentField.name == "HasHairInputField") {
+                   character.hasHair = newText == "true" ?  true :  false;
                 }
-            }
-            else if (currentField.name == "WearsGlassesInputField") {
-                if (newText != "true" && newText != "false") {
-                    errorText.text = "Must be true or false";
-                    errorWindow.SetActive(true);
+                else if (currentField.name == "WearsHatInputField") {
+                   character.hasHat = newText == "true" ?  true :  false;
                 }
-                else if (newText == "true") {
-                    character.hasGlasses = true;
+                else if (currentField.name == "WearsGlassesInputField") {
+                    character.hasGlasses = newText == "true" ?  true :  false;
                 }
-            }
-            else if (currentField.name == "WearsMaskInputField") {
-                if (newText != "true" && newText != "false") {
-                    errorText.text = "Must be true or false";
-                    errorWindow.SetActive(true);
+                else if (currentField.name == "WearsMaskInputField") {
+                    character.hasMask = newText == "true" ?  true :  false;
                 }
-                else if (newText == "true") {
-                    character.hasMask = true;
-                }
-            }
-            else if (currentField.name == "WearsShoesInputField") {
-                if (newText != "true" && newText != "false") {
-                    errorText.text = "Must be true or false";
-                    errorWindow.SetActive(true);
-                }
-                else if (newText == "true") {
-                    character.hasShoes = true;
+                else if (currentField.name == "WearsShoesInputField") {
+                    character.hasShoes = newText == "true" ? true : false;
                 }
             }
         }

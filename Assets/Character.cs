@@ -17,6 +17,8 @@ public class Character : ScriptableObject {
     public GameObject bottoms;
     public GameObject shoes;
 
+    List<GameObject> parts = new List<GameObject>();
+
     public bool hasHair = false;
     public bool hasHat = false;
     public bool hasGlasses = false;
@@ -24,5 +26,17 @@ public class Character : ScriptableObject {
     public bool hasShoes = false;
 
     public char bodyShape;
+
+    public void addPart(GameObject part) {
+        parts.Add(part);
+    }
+
+    public void removePart(GameObject part) {
+        parts.Remove(part);
+    }
+
+    public List<GameObject> getParts() {
+        return parts;
+    }
   
 }
