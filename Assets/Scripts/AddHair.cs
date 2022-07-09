@@ -16,7 +16,7 @@ public class AddHair : MonoBehaviour
     public Sprite shortOrange;
     public Sprite dreads;
     public Sprite longGreen;
-
+    public Sprite[] hairs;
 
     public void OnStoppedEditing(string text) {
         CloseOthers();
@@ -41,15 +41,19 @@ public class AddHair : MonoBehaviour
             SpriteRenderer sr = character.hair.GetComponent<SpriteRenderer>();
             if (text == "\"long green\"") {
                 sr.sprite = longGreen; 
+                character.staticHair = hairs[..4];
             }
             else if (text == "\"short black\"") {
                 sr.sprite = shortBlack;
+                character.staticHair = hairs[8..12];
             }
             else if (text == "\"dreads\"") {
                 sr.sprite = dreads;
+                character.staticHair = hairs[4..8];
             }
             else if (text == "\"short orange\"") {
                 sr.sprite = shortOrange;
+                character.staticHair = hairs[12..];
             }
             character.addPart(character.hair);
         }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NavigationButton : MonoBehaviour
 {
@@ -18,14 +19,8 @@ public class NavigationButton : MonoBehaviour
         
     } 
 
-    public void MoveCharacterToMiddle() {
-        GameObject body = GameObject.Find("Body");
-        body.transform.position = new Vector3(0, 0, 0);
-        GameObject bottoms = GameObject.Find("Bottoms");
-        bottoms.transform.position = new Vector3(0, 0, 0);
-    }
-
     public void RemoveCharacter() {
+        print("number of parts: " + character.getParts().Count);
         foreach (GameObject go in character.getParts()) {
             go.SetActive(false);
         }
@@ -36,6 +31,10 @@ public class NavigationButton : MonoBehaviour
          foreach (GameObject go in character.getParts()) {
             go.SetActive(true);
         }
+    }
+
+    public void LoadCityScene() {
+        SceneManager.LoadScene(1);
     }
     
 

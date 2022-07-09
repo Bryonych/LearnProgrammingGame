@@ -17,6 +17,16 @@ public class Character : ScriptableObject {
     public GameObject bottoms;
     public GameObject shoes;
 
+    public Sprite[] staticBody;
+    public Sprite[] staticHair;
+    public Sprite[] staticHat;
+    public Sprite[] staticGlasses;
+    public Sprite[] staticMask;
+    public Sprite[] staticTop;
+    public Sprite[] staticBottoms;
+    public Sprite[] staticShoes;
+
+
     List<GameObject> parts = new List<GameObject>();
 
     public bool hasHair = false;

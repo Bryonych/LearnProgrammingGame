@@ -14,7 +14,7 @@ public class AddHat : MonoBehaviour
     public GameObject hat;
     public Sprite cap;
     public Sprite topHat;
-
+    public Sprite[] hats;
 
 
     public void OnStoppedEditing(string text) {
@@ -40,9 +40,11 @@ public class AddHat : MonoBehaviour
             SpriteRenderer sr = character.hat.GetComponent<SpriteRenderer>();
             if (text == "\"cap\"") {
                 sr.sprite = cap; 
+                character.staticHat = hats[4..];
             }
             else if (text == "\"top hat\"") {
                 sr.sprite = topHat;
+                character.staticHat = hats[..4];
             }
             character.addPart(character.hat);
         }

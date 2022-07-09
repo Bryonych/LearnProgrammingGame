@@ -17,7 +17,7 @@ public class AddShoes : MonoBehaviour
     public Sprite hGreen;
     public Sprite sGreen;
     public Sprite hBoots;
-
+    public Sprite[] shoes;
 
     public void OnStoppedEditing(string text) {
         CloseOthers();
@@ -42,16 +42,20 @@ public class AddShoes : MonoBehaviour
             character.shoes = footwear;
             SpriteRenderer sr = character.shoes.GetComponent<SpriteRenderer>();
             if (character.bodyShape == 's' && text == "\"shoes\"") {
-                sr.sprite = sGreen; 
+                sr.sprite = sGreen;
+                character.staticShoes = shoes[4..8];
             }
             else if (character.bodyShape == 'h' && text == "\"shoes\"") {
                 sr.sprite = hGreen;
+                character.staticShoes = shoes[4..8];
             }
             else if (character.bodyShape == 's' && text == "\"boots\"") {
                 sr.sprite = sBoots;
+                character.staticShoes = shoes[..4];
             }
             else if (character.bodyShape == 'h' && text == "\"boots\"") {
                 sr.sprite = hBoots;
+                character.staticShoes = shoes[8..];
             }
             else {
                 print("Body shape may not have been set up?");

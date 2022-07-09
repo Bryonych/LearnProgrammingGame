@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class AddBottoms : MonoBehaviour
+public class AddTop : MonoBehaviour
 {
     public TMP_InputField currentField;
     public GameObject errorWindow;
     public GameObject[] otherWindows;
     public Character character;
     public TextMeshProUGUI errorText;
-    public GameObject bottoms;
-    public Sprite sTrousers;
-    public Sprite hTrousers;
-    public Sprite sShorts;
-    public Sprite hShorts;
-
+    public GameObject top;
+    public Sprite sBusiness;
+    public Sprite hBusiness;
+    public Sprite sTShirt;
+    public Sprite hTShirt;
+    public Sprite[] tops;
 
     public void OnStoppedEditing(string text) {
         CloseOthers();
@@ -27,32 +27,36 @@ public class AddBottoms : MonoBehaviour
             errorText.text = "Requires a string, which needs quotation marks";
             errorWindow.SetActive(true);
         }
-        else if (text == "\"shorts\"" || text == "\"trousers\"") {
-            if (bottoms == null) {
-                bottoms = GameObject.Find("Bottoms");
+        else if (text == "\"jacket\"" || text == "\"t-shirt\"") {
+            if (top == null) {
+                top = GameObject.Find("Top");
             }
-            bottoms.SetActive(false);
-            character.bottoms = bottoms;
-            SpriteRenderer sr = character.bottoms.GetComponent<SpriteRenderer>();
-            if (character.bodyShape == 's' && text == "\"trousers\"") {
-                sr.sprite = sTrousers; 
+            top.SetActive(false);
+            character.top = top;
+            SpriteRenderer sr = character.top.GetComponent<SpriteRenderer>();
+            if (character.bodyShape == 's' && text == "\"jacket\"") {
+                sr.sprite = sBusiness; 
+                character.staticTop = tops[..4];
             }
-            else if (character.bodyShape == 'h' && text == "\"trousers\"") {
-                sr.sprite = hTrousers;
+            else if (character.bodyShape == 'h' && text == "\"jacket\"") {
+                sr.sprite = hBusiness;
+                character.staticTop = tops[8..12];
             }
-            else if (character.bodyShape == 's' && text == "\"shorts\"") {
-                sr.sprite = sShorts;
+            else if (character.bodyShape == 's' && text == "\"t-shirt\"") {
+                sr.sprite = sTShirt;
+                character.staticTop = tops[4..8];
             }
-            else if (character.bodyShape == 'h' && text == "\"shorts\"") {
-                sr.sprite = hShorts;
+            else if (character.bodyShape == 'h' && text == "\"t-shirt\"") {
+                sr.sprite = hTShirt;
+                character.staticTop = tops[12..];
             }
             else {
                 print("Body shape may not have been set up?");
             }
-            character.addPart(character.bottoms);
+            character.addPart(character.top);
         }
         else {
-            errorText.text = "Inputs are either \"trousers\" or \"shorts\"";
+            errorText.text = "Inputs are either \"jacket\" or \"t-shirt\"";
             errorWindow.SetActive(true);
         }
     }
@@ -69,4 +73,5 @@ public class AddBottoms : MonoBehaviour
     {
         currentField.onEndEdit.AddListener(delegate {OnStoppedEditing(currentField.text);});
     }
+
 }
