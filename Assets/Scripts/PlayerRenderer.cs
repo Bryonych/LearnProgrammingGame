@@ -11,7 +11,7 @@ public class PlayerRenderer : MonoBehaviour
 
     public Character character;
     Animator animator;
-    int lastDirection;
+    int lastDirection = 1;
 
     private void Awake() {
         animator = GetComponent<Animator>();
@@ -19,91 +19,90 @@ public class PlayerRenderer : MonoBehaviour
 
     public void SetDirection(Vector2 direction) {
         string[] directionArray = null;
-
-        lastDirection = DirectionToIndex(direction, 4);
+        animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+        animator.SetFloat("Vertical", Input.GetAxis("Vertical"));
+        // lastDirection = DirectionToIndex(direction, 4);
         // if (direction.magnitude < 0.01f) {
         //     directionArray = staticDirections;
-        //     UpdateImage(directionArray[lastDirection]);
+        //     // UpdateImage(directionArray[lastDirection]);
         // } else {
         //     directionArray = runDirections;
-        //     lastDirection = DirectionToIndex(direction, 4);
-        //     UpdateClip(directionArray[lastDirection]);
+        //     // lastDirection = DirectionToIndex(direction, 4);
+        //     // UpdateClip(directionArray[lastDirection]);
         // }
-        directionArray = staticDirections;
+        // directionArray = staticDirections;
         
 
         // int stateHash = Array.IndexOf(directionArray, directionArray[lastDirection]);
-
-        UpdateImage(directionArray[lastDirection]);
+        // print("last direction " + directionArray[lastDirection]);
+        // UpdateImage(directionArray[lastDirection]);
 
     }
 
-    public static int DirectionToIndex(Vector2 dir, int sliceCount) {
-        Vector2 normDir = dir.normalized;
-        float step = 360f / sliceCount;
-        float halfstep = step / 2;
-        float angle = Vector2.SignedAngle(Vector2.up, normDir);
-        angle -= 60;
-        angle += halfstep;
+    // public static int DirectionToIndex(Vector2 dir, int sliceCount) {
+    //     Vector2 normDir = dir.normalized;
+    //     float step = 360f / sliceCount;
+    //     float halfstep = step / 2;
+    //     float angle = Vector2.SignedAngle(Vector2.up, normDir);
+    //     angle -= 60;
+    //     angle += halfstep;
 
-        if (angle < 0) {
-            angle += 360;
-        }
+    //     if (angle < 0) {
+    //         angle += 360;
+    //     }
 
-        float stepCount = angle / step;
-        return Mathf.FloorToInt(stepCount);
-    }
+    //     float stepCount = angle / step;
+    //     return Mathf.FloorToInt(stepCount);
+    // }
 
-    public void UpdateImage(string direction) {
-        GameObject bd = GameObject.Find("Body");
-        SpriteRenderer srb = bd.GetComponent<SpriteRenderer>();
-        SpriteRenderer srbot = GameObject.Find("Bottoms").GetComponent<SpriteRenderer>();
-        // SpriteRenderer srg = GameObject.Find("Glasses").GetComponent<SpriteRenderer>();
-        SpriteRenderer srh = GameObject.Find("Hair").GetComponent<SpriteRenderer>();
-        SpriteRenderer srha = GameObject.Find("Hat").GetComponent<SpriteRenderer>();
-        SpriteRenderer srs = GameObject.Find("Shoes").GetComponent<SpriteRenderer>();
-        SpriteRenderer srt = GameObject.Find("Top").GetComponent<SpriteRenderer>();
-        // SpriteRenderer srm = GameObject.Find("Mask").GetComponent<SpriteRenderer>();
-        if (direction == "Static NW") {
-            srb.sprite = character.staticBody[1];
-            srbot.sprite = character.staticBottoms[1];
-            // srg.sprite = character.staticGlasses[1];
-            srh.sprite = character.staticHair[1];
-            srha.sprite = character.staticHat[1];
-            srs.sprite = character.staticShoes[1];
-            srt.sprite = character.staticTop[1];
-            // srm.sprite = character.staticMask[1];
-        }
-        else if (direction == "Static SW") {
-            srb.sprite = character.staticBody[0];
-            srbot.sprite = character.staticBottoms[0];
-            // srg.sprite = character.staticGlasses[0];
-            srh.sprite = character.staticHair[0];
-            srha.sprite = character.staticHat[0];
-            srs.sprite = character.staticShoes[0];
-            srt.sprite = character.staticTop[0];
-            // srm.sprite = character.staticMask[0];
-        }
-        else if (direction == "Static SE") {
-            srb.sprite = character.staticBody[3];
-            srbot.sprite = character.staticBottoms[3];
-            // srg.sprite = character.staticGlasses[3];
-            srh.sprite = character.staticHair[3];
-            srha.sprite = character.staticHat[3];
-            srs.sprite = character.staticShoes[3];
-            srt.sprite = character.staticTop[3];
-            // srm.sprite = character.staticMask[3];
-        }
-        else if (direction == "Static NE") {
-            srb.sprite = character.staticBody[2];
-            srbot.sprite = character.staticBottoms[2];
-            // srg.sprite = character.staticGlasses[2];
-            srh.sprite = character.staticHair[2];
-            srha.sprite = character.staticHat[2];
-            srs.sprite = character.staticShoes[2];
-            srt.sprite = character.staticTop[2];
-            // srm.sprite = character.staticMask[2];
-        }
-    }
+    // public void UpdateImage(string direction) {
+    //     foreach (GameObject go in character.getParts()) {
+    //         Animator anim = GameObject.Find(go.name).GetComponent<Animator>();
+    //         anim.enabled = false;
+    //         SpriteRenderer sr = GameObject.Find(go.name).GetComponent<SpriteRenderer>();
+    //         Sprite[] images = character.GetSprites(go);
+    //         if (direction == "Static NW") {
+    //             sr.sprite = images[1];
+    //         }
+    //         else if (direction == "Static SW") {
+    //             sr.sprite = images[0];
+    //             print("SW Static");
+    //         }
+    //         else if (direction == "Static SE") {
+    //             sr.sprite = images[3];
+    //         }
+    //         else if (direction == "Static NE") {
+    //             sr.sprite = images[2];
+    //         }
+    //         else {
+    //             print("Invalid Direction");
+    //         }
+    //     }
+    // }
 
-}
+    // public void UpdateClip(string direction) {
+    //     foreach(GameObject go in character.getParts()) {
+    //         Animator anim = GameObject.Find(go.name).GetComponent<Animator>();
+    //         anim.enabled = true;
+    //         string[] clips = character.GetClips(go);
+    //         if (direction == "Run NW") {
+    //             anim.Play(clips[1]);
+    //         }
+    //         else if (direction == "Run SW") {
+    //             print("clip" + clips[0]);
+    //             anim.Play(clips[0], 0, 0);
+    //             print("SW moving");
+    //         }
+    //         else if (direction == "Run SE") {
+    //              anim.Play(clips[3]);
+    //         }
+    //         else if (direction == "Run NE") {
+    //             anim.Play(clips[2]);
+    //         }
+    //         else {
+    //             print("Invalid run direction");
+    //         }
+    //     }
+    // }
+
+ }

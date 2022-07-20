@@ -16,6 +16,7 @@ public class AddTop : MonoBehaviour
     public Sprite sTShirt;
     public Sprite hTShirt;
     public Sprite[] tops;
+    public RuntimeAnimatorController[] controller;
 
     public void OnStoppedEditing(string text) {
         CloseOthers();
@@ -33,22 +34,31 @@ public class AddTop : MonoBehaviour
             }
             top.SetActive(false);
             character.top = top;
+            DontDestroyOnLoad(character.top);
             SpriteRenderer sr = character.top.GetComponent<SpriteRenderer>();
             if (character.bodyShape == 's' && text == "\"jacket\"") {
                 sr.sprite = sBusiness; 
-                character.staticTop = tops[..4];
+                character.setController("Top", controller[0]);
+                // character.staticTop = tops[..4];
+                // character.animTop = topAnimations[..4];
             }
             else if (character.bodyShape == 'h' && text == "\"jacket\"") {
                 sr.sprite = hBusiness;
-                character.staticTop = tops[8..12];
+                character.setController("Top", controller[2]);
+                // character.staticTop = tops[8..12];
+                // character.animTop = topAnimations[8..12];
             }
             else if (character.bodyShape == 's' && text == "\"t-shirt\"") {
                 sr.sprite = sTShirt;
-                character.staticTop = tops[4..8];
+                character.setController("Top", controller[1]);
+                // character.staticTop = tops[4..8];
+                // character.animTop = topAnimations[4..8];
             }
             else if (character.bodyShape == 'h' && text == "\"t-shirt\"") {
                 sr.sprite = hTShirt;
-                character.staticTop = tops[12..];
+                character.setController("Top", controller[3]);
+                // character.staticTop = tops[12..];
+                // character.animTop = topAnimations[12..];
             }
             else {
                 print("Body shape may not have been set up?");

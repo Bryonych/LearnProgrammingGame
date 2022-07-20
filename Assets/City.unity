@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 29205076}
   - component: {fileID: 29205075}
   - component: {fileID: 29205074}
+  - component: {fileID: 29205078}
   m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
@@ -526,6 +527,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
+--- !u!95 &29205078
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29205071}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &40286770
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,6 +2189,7 @@ GameObject:
   - component: {fileID: 212583740}
   - component: {fileID: 212583739}
   - component: {fileID: 212583738}
+  - component: {fileID: 212583742}
   m_Layer: 0
   m_Name: Hat
   m_TagString: Untagged
@@ -2305,6 +2327,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
+--- !u!95 &212583742
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212583735}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &217314024
 GameObject:
   m_ObjectHideFlags: 0
@@ -7295,6 +7337,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 606d9fee8b7479441b929069bb0149b7, type: 2}
   bodies: []
+  bodyAnimations: []
+  controller: {fileID: 0}
 --- !u!1 &827078006
 GameObject:
   m_ObjectHideFlags: 0
@@ -15669,6 +15713,7 @@ GameObject:
   - component: {fileID: 1581582013}
   - component: {fileID: 1581582015}
   - component: {fileID: 1581582014}
+  - component: {fileID: 1581582016}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -15737,7 +15782,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.41, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -15806,6 +15851,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 1
+--- !u!95 &1581582016
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581582009}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1600738547
 GameObject:
   m_ObjectHideFlags: 0
@@ -15904,6 +15969,7 @@ GameObject:
   - component: {fileID: 1611370735}
   - component: {fileID: 1611370734}
   - component: {fileID: 1611370733}
+  - component: {fileID: 1611370737}
   m_Layer: 0
   m_Name: Hair
   m_TagString: Untagged
@@ -16041,6 +16107,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
+--- !u!95 &1611370737
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611370730}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1623875781
 GameObject:
   m_ObjectHideFlags: 0
@@ -16223,6 +16309,7 @@ GameObject:
   - component: {fileID: 1625858364}
   - component: {fileID: 1625858363}
   - component: {fileID: 1625858362}
+  - component: {fileID: 1625858366}
   m_Layer: 0
   m_Name: Shoes
   m_TagString: Untagged
@@ -16360,6 +16447,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
+--- !u!95 &1625858366
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625858359}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1628184087
 GameObject:
   m_ObjectHideFlags: 0
@@ -16794,6 +16901,7 @@ GameObject:
   - component: {fileID: 1651853026}
   - component: {fileID: 1651853025}
   - component: {fileID: 1651853024}
+  - component: {fileID: 1651853028}
   m_Layer: 0
   m_Name: Bottoms
   m_TagString: Untagged
@@ -16931,6 +17039,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
+--- !u!95 &1651853028
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651853021}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1660290388
 GameObject:
   m_ObjectHideFlags: 0
@@ -20444,6 +20572,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 606d9fee8b7479441b929069bb0149b7, type: 2}
   bodies: []
+  bodyAnimations: []
+  controller: {fileID: 0}
 --- !u!114 &1975605690
 MonoBehaviour:
   m_ObjectHideFlags: 0

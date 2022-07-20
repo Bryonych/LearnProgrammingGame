@@ -140,10 +140,10 @@ TextureImporter:
       name: SHWHRight
       rect:
         serializedVersion: 2
-        x: 145
-        y: 259.5
-        width: 145.66667
-        height: 259.5
+        x: 149
+        y: 259
+        width: 141
+        height: 260
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +161,10 @@ TextureImporter:
       name: SHTShirtRight
       rect:
         serializedVersion: 2
-        x: 290
-        y: 259.5
-        width: 145.66667
-        height: 259.5
+        x: 301
+        y: 260
+        width: 142
+        height: 259
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +182,10 @@ TextureImporter:
       name: SHJacketRight
       rect:
         serializedVersion: 2
-        x: 435
-        y: 259.5
-        width: 145.66667
-        height: 259.5
+        x: 434
+        y: 256
+        width: 143
+        height: 260
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,9 +246,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0.5
-        width: 145.66667
-        height: 259.5
+        y: 15
+        width: 146
+        height: 259
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,9 +267,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 145
-        y: 0.5
-        width: 145.66667
-        height: 259.5
+        y: 17
+        width: 146
+        height: 257
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,10 +287,10 @@ TextureImporter:
       name: SHShortsRight
       rect:
         serializedVersion: 2
-        x: 290
-        y: 0.5
-        width: 145.66667
-        height: 259.5
+        x: 300
+        y: 19
+        width: 144
+        height: 258
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,10 +308,10 @@ TextureImporter:
       name: SHBootsRight
       rect:
         serializedVersion: 2
-        x: 435
-        y: 0.5
-        width: 145.66667
-        height: 259.5
+        x: 433
+        y: 19
+        width: 144
+        height: 258
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,9 +330,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 580
-        y: 0.5
-        width: 145.66667
-        height: 259.5
+        y: 23
+        width: 145
+        height: 259
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

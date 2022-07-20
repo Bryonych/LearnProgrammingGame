@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class NavigationButton : MonoBehaviour
 {
     public GameObject Panel;
@@ -34,6 +35,15 @@ public class NavigationButton : MonoBehaviour
     }
 
     public void LoadCityScene() {
+        foreach (GameObject go in character.getParts()) {
+            go.AddComponent<PlayerRenderer>().character = character;
+            go.AddComponent<PlayerMovementController>();
+            go.transform.localScale = new Vector3(go.transform.localScale.x - 1.0f, go.transform.localScale.y - 1.0f, go.transform.localScale.z);
+            go.transform.position = new Vector3(go.transform.position.x - 1.0f, go.transform.position.y, go.transform.position.z);
+            Animator anim = GameObject.Find(go.name).GetComponent<Animator>();
+            anim.enabled = true;
+            anim.runtimeAnimatorController = character.GetController(go);
+        }
         SceneManager.LoadScene(1);
     }
     

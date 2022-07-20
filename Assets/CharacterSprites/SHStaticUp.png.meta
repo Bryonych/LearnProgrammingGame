@@ -119,10 +119,10 @@ TextureImporter:
       name: SHDarkUp
       rect:
         serializedVersion: 2
-        x: 5
-        y: 259.5
-        width: 144.83333
-        height: 259.5
+        x: 4
+        y: 260
+        width: 145
+        height: 259
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: SHWHUp
       rect:
         serializedVersion: 2
-        x: 149
-        y: 259.5
-        width: 144.83333
-        height: 259.5
+        x: 150
+        y: 260
+        width: 147
+        height: 259
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +161,10 @@ TextureImporter:
       name: SHTShirtUp
       rect:
         serializedVersion: 2
-        x: 293
-        y: 259.5
-        width: 144.83333
-        height: 259.5
+        x: 305
+        y: 271
+        width: 133
+        height: 248
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +182,10 @@ TextureImporter:
       name: SHJacketUp
       rect:
         serializedVersion: 2
-        x: 437
-        y: 259.5
-        width: 144.83333
-        height: 259.5
+        x: 440
+        y: 260
+        width: 137
+        height: 259
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,10 +224,10 @@ TextureImporter:
       name: DreadsUp
       rect:
         serializedVersion: 2
-        x: 725
-        y: 259.5
-        width: 144.83333
-        height: 259.5
+        x: 734
+        y: 260
+        width: 136
+        height: 259
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,10 +245,10 @@ TextureImporter:
       name: LongGreenUP
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0.5
-        width: 144.83333
-        height: 259.5
+        x: 7
+        y: 0
+        width: 135
+        height: 260
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,10 +287,10 @@ TextureImporter:
       name: SHShortsUp
       rect:
         serializedVersion: 2
-        x: 293
-        y: 0.5
-        width: 144.83333
-        height: 259.5
+        x: 303
+        y: 0
+        width: 135
+        height: 260
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,10 +308,10 @@ TextureImporter:
       name: SHBootsUp
       rect:
         serializedVersion: 2
-        x: 437
-        y: 0.5
-        width: 144.83333
-        height: 259.5
+        x: 433
+        y: 0
+        width: 147
+        height: 260
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,10 +329,10 @@ TextureImporter:
       name: ShoesUp
       rect:
         serializedVersion: 2
-        x: 581
-        y: 0.5
-        width: 144.83333
-        height: 259.5
+        x: 594
+        y: 0
+        width: 132
+        height: 260
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

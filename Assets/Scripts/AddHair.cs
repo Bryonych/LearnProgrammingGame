@@ -17,6 +17,7 @@ public class AddHair : MonoBehaviour
     public Sprite dreads;
     public Sprite longGreen;
     public Sprite[] hairs;
+    public RuntimeAnimatorController[] controller;
 
     public void OnStoppedEditing(string text) {
         CloseOthers();
@@ -38,22 +39,31 @@ public class AddHair : MonoBehaviour
             }
             hair.SetActive(false);
             character.hair = hair;
+            DontDestroyOnLoad(character.hair);
             SpriteRenderer sr = character.hair.GetComponent<SpriteRenderer>();
             if (text == "\"long green\"") {
                 sr.sprite = longGreen; 
-                character.staticHair = hairs[..4];
+                character.setController("Hair", controller[0]);
+                // character.staticHair = hairs[..4];
+                // character.animHair = hairAnimations[..4];
             }
             else if (text == "\"short black\"") {
                 sr.sprite = shortBlack;
-                character.staticHair = hairs[8..12];
+                character.setController("Hair", controller[2]);
+                // character.staticHair = hairs[8..12];
+                // character.animHair = hairAnimations[8..12];
             }
             else if (text == "\"dreads\"") {
                 sr.sprite = dreads;
-                character.staticHair = hairs[4..8];
+                character.setController("Hair", controller[1]);
+                // character.staticHair = hairs[4..8];
+                // character.animHair = hairAnimations[4..8];
             }
             else if (text == "\"short orange\"") {
                 sr.sprite = shortOrange;
-                character.staticHair = hairs[12..];
+                character.setController("Hair", controller[3]);
+                // character.staticHair = hairs[12..];
+                // character.animHair = hairAnimations[12..];
             }
             character.addPart(character.hair);
         }

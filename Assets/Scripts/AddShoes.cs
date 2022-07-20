@@ -18,6 +18,7 @@ public class AddShoes : MonoBehaviour
     public Sprite sGreen;
     public Sprite hBoots;
     public Sprite[] shoes;
+    public RuntimeAnimatorController[] controller;
 
     public void OnStoppedEditing(string text) {
         CloseOthers();
@@ -40,22 +41,31 @@ public class AddShoes : MonoBehaviour
             footwear.SetActive(false);
             print(footwear);
             character.shoes = footwear;
+            DontDestroyOnLoad(character.shoes);
             SpriteRenderer sr = character.shoes.GetComponent<SpriteRenderer>();
             if (character.bodyShape == 's' && text == "\"shoes\"") {
                 sr.sprite = sGreen;
-                character.staticShoes = shoes[4..8];
+                character.setController("Shoes", controller[0]);
+                // character.staticShoes = shoes[4..8];
+                // character.animShoes = shoeAnimations[4..8];
             }
             else if (character.bodyShape == 'h' && text == "\"shoes\"") {
                 sr.sprite = hGreen;
-                character.staticShoes = shoes[4..8];
+                character.setController("Shoes", controller[2]);
+                // character.staticShoes = shoes[..4];
+                // character.animShoes = shoeAnimations[..4];
             }
             else if (character.bodyShape == 's' && text == "\"boots\"") {
                 sr.sprite = sBoots;
-                character.staticShoes = shoes[..4];
+                character.setController("Shoes", controller[1]);
+                // character.staticShoes = shoes[..4];
+                // character.animShoes = shoeAnimations[..4];
             }
             else if (character.bodyShape == 'h' && text == "\"boots\"") {
                 sr.sprite = hBoots;
-                character.staticShoes = shoes[8..];
+                character.setController("Shoes", controller[3]);
+                // character.staticShoes = shoes[8..];
+                // character.animShoes = shoeAnimations[8..];
             }
             else {
                 print("Body shape may not have been set up?");

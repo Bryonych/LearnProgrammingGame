@@ -16,6 +16,7 @@ public class AddBottoms : MonoBehaviour
     public Sprite sShorts;
     public Sprite hShorts;
     public Sprite[] troudies;
+    public RuntimeAnimatorController[] controller;
 
     public void OnStoppedEditing(string text) {
         CloseOthers();
@@ -33,22 +34,31 @@ public class AddBottoms : MonoBehaviour
             }
             bottoms.SetActive(false);
             character.bottoms = bottoms;
+            DontDestroyOnLoad(character.bottoms);
             SpriteRenderer sr = character.bottoms.GetComponent<SpriteRenderer>();
             if (character.bodyShape == 's' && text == "\"trousers\"") {
                 sr.sprite = sTrousers; 
-                character.staticBottoms = troudies[..4];
+                character.setController("Bottoms", controller[0]);
+                // character.staticBottoms = troudies[..4];
+                // character.animBottoms = pantsAnimations[..4];
             }
             else if (character.bodyShape == 'h' && text == "\"trousers\"") {
                 sr.sprite = hTrousers;
-                character.staticBottoms = troudies[8..12];
+                character.setController("Bottoms", controller[2]);
+                // character.staticBottoms = troudies[8..12];
+                // character.animBottoms = pantsAnimations[8..12];
             }
             else if (character.bodyShape == 's' && text == "\"shorts\"") {
                 sr.sprite = sShorts;
-                character.staticBottoms = troudies[4..8];
+                character.setController("Bottoms", controller[1]);
+                // character.staticBottoms = troudies[4..8];
+                // character.animBottoms = pantsAnimations[4..8];
             }
             else if (character.bodyShape == 'h' && text == "\"shorts\"") {
                 sr.sprite = hShorts;
-                character.staticBottoms = troudies[12..];
+                character.setController("Bottoms", controller[3]);
+                // character.staticBottoms = troudies[12..];
+                // character.animBottoms = pantsAnimations[12..];
             }
             else {
                 print("Body shape may not have been set up?");

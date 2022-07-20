@@ -15,7 +15,7 @@ public class AddHat : MonoBehaviour
     public Sprite cap;
     public Sprite topHat;
     public Sprite[] hats;
-
+    public RuntimeAnimatorController[] controller;
 
     public void OnStoppedEditing(string text) {
         CloseOthers();
@@ -37,14 +37,19 @@ public class AddHat : MonoBehaviour
             }
             hat.SetActive(false);
             character.hat = hat;
+            DontDestroyOnLoad(character.hat);
             SpriteRenderer sr = character.hat.GetComponent<SpriteRenderer>();
             if (text == "\"cap\"") {
                 sr.sprite = cap; 
-                character.staticHat = hats[4..];
+                character.setController("Hat", controller[1]);
+                // character.staticHat = hats[4..];
+                // character.animHat = hatAnimations[4..];
             }
             else if (text == "\"top hat\"") {
                 sr.sprite = topHat;
-                character.staticHat = hats[..4];
+                character.setController("Hat", controller[0]);
+                // character.staticHat = hats[..4];
+                // character.animHat = hatAnimations[..4];
             }
             character.addPart(character.hat);
         }
