@@ -6,7 +6,7 @@ using System;
 public class PlayerMovementController : MonoBehaviour
 {
 
-    public float movementSpeed = 1f;
+    public float movementSpeed = 1.5f;
     PlayerRenderer isoRenderer;
 
     Rigidbody2D rbody;
