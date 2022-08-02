@@ -34,7 +34,7 @@ public class AddBottoms : MonoBehaviour
             }
             bottoms.SetActive(false);
             character.bottoms = bottoms;
-            DontDestroyOnLoad(character.bottoms);
+            DontDestroyOnLoad(character.bottoms.transform.parent);
             SpriteRenderer sr = character.bottoms.GetComponent<SpriteRenderer>();
             if (character.bodyShape == 's' && text == "\"trousers\"") {
                 sr.sprite = sTrousers; 

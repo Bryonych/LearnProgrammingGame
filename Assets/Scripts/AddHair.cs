@@ -39,7 +39,7 @@ public class AddHair : MonoBehaviour
             }
             hair.SetActive(false);
             character.hair = hair;
-            DontDestroyOnLoad(character.hair);
+            // DontDestroyOnLoad(character.hair);
             SpriteRenderer sr = character.hair.GetComponent<SpriteRenderer>();
             if (text == "\"long green\"") {
                 sr.sprite = longGreen; 

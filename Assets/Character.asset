@@ -22,37 +22,17 @@ MonoBehaviour:
   top: {fileID: 0}
   bottoms: {fileID: 0}
   shoes: {fileID: 0}
-  staticBody:
-  - {fileID: -523573263, guid: f0a73e7fce0105b4c94f847e5e22ff36, type: 3}
-  - {fileID: -2069319945, guid: 415ac26b55362fe4a8a2fa912de9ca9f, type: 3}
-  - {fileID: 354348923, guid: f04fa609f10b20d4586d1331442d2720, type: 3}
-  - {fileID: -521430110, guid: 41279245de288f54b81e4e644703576d, type: 3}
-  staticHair:
-  - {fileID: 1730680741, guid: f0a73e7fce0105b4c94f847e5e22ff36, type: 3}
-  - {fileID: -1119573815, guid: 415ac26b55362fe4a8a2fa912de9ca9f, type: 3}
-  - {fileID: 622483115, guid: f04fa609f10b20d4586d1331442d2720, type: 3}
-  - {fileID: -1113152520, guid: 41279245de288f54b81e4e644703576d, type: 3}
+  staticBody: []
+  staticHair: []
   staticHat: []
   staticGlasses: []
   staticMask: []
-  staticTop:
-  - {fileID: 89912366, guid: f0a73e7fce0105b4c94f847e5e22ff36, type: 3}
-  - {fileID: 1240281643, guid: 415ac26b55362fe4a8a2fa912de9ca9f, type: 3}
-  - {fileID: 1192474839, guid: f04fa609f10b20d4586d1331442d2720, type: 3}
-  - {fileID: 142093357, guid: 41279245de288f54b81e4e644703576d, type: 3}
-  staticBottoms:
-  - {fileID: 555107793, guid: f0a73e7fce0105b4c94f847e5e22ff36, type: 3}
-  - {fileID: 1919195927, guid: 415ac26b55362fe4a8a2fa912de9ca9f, type: 3}
-  - {fileID: -466495617, guid: f04fa609f10b20d4586d1331442d2720, type: 3}
-  - {fileID: -1057709160, guid: 41279245de288f54b81e4e644703576d, type: 3}
-  staticShoes:
-  - {fileID: 1199525936, guid: f0a73e7fce0105b4c94f847e5e22ff36, type: 3}
-  - {fileID: 768224999, guid: 415ac26b55362fe4a8a2fa912de9ca9f, type: 3}
-  - {fileID: 1085905038, guid: f04fa609f10b20d4586d1331442d2720, type: 3}
-  - {fileID: -982117246, guid: 41279245de288f54b81e4e644703576d, type: 3}
-  hasHair: 1
+  staticTop: []
+  staticBottoms: []
+  staticShoes: []
+  hasHair: 0
   hasHat: 0
   hasGlasses: 0
   hasMask: 0
-  hasShoes: 1
-  bodyShape: 115
+  hasShoes: 0
+  bodyShape: 0

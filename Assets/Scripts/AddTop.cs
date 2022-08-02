@@ -34,7 +34,7 @@ public class AddTop : MonoBehaviour
             }
             top.SetActive(false);
             character.top = top;
-            DontDestroyOnLoad(character.top);
+            // DontDestroyOnLoad(character.top);
             SpriteRenderer sr = character.top.GetComponent<SpriteRenderer>();
             if (character.bodyShape == 's' && text == "\"jacket\"") {
                 sr.sprite = sBusiness; 

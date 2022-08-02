@@ -25,12 +25,10 @@ public class CreateCharacter : MonoBehaviour
         }
         body.SetActive(true);
         character.body = body;
-        DontDestroyOnLoad(character.body);
+        DontDestroyOnLoad(character.body.transform.parent);
         SpriteRenderer sr = character.body.GetComponent<SpriteRenderer>();
         sr.sprite = bd; 
         character.addPart(body);
-        // character.staticBody = bodies;
-        // character.animBody = bodyAnimations;
         character.setController("Body", controller);
         if (bd.name.StartsWith("SH")) {
             character.bodyShape = 's';

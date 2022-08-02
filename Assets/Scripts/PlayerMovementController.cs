@@ -12,7 +12,8 @@ public class PlayerMovementController : MonoBehaviour
     Rigidbody2D rbody;
 
     private void Awake() {
-        rbody = GetComponent<Rigidbody2D>();
+        // rbody = GetComponent<Rigidbody2D>();
+        rbody = transform.parent.GetComponent<Rigidbody2D>();
         isoRenderer = GetComponentInChildren<PlayerRenderer>();
     }
 

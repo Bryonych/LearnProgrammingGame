@@ -37,7 +37,7 @@ public class AddHat : MonoBehaviour
             }
             hat.SetActive(false);
             character.hat = hat;
-            DontDestroyOnLoad(character.hat);
+            // DontDestroyOnLoad(character.hat);
             SpriteRenderer sr = character.hat.GetComponent<SpriteRenderer>();
             if (text == "\"cap\"") {
                 sr.sprite = cap; 

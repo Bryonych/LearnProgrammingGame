@@ -9,6 +9,7 @@ public class NavigationButton : MonoBehaviour
     public GameObject Panel;
     public GameObject OldPanel;
     public Character character;
+    FollowPlayer fp;
 
     public void OpenPanel() {
         if (OldPanel != null) {
@@ -38,12 +39,15 @@ public class NavigationButton : MonoBehaviour
         foreach (GameObject go in character.getParts()) {
             go.AddComponent<PlayerRenderer>().character = character;
             go.AddComponent<PlayerMovementController>();
-            go.transform.localScale = new Vector3(go.transform.localScale.x - 1.0f, go.transform.localScale.y - 1.0f, go.transform.localScale.z);
-            go.transform.position = new Vector3(go.transform.position.x - 1.0f, go.transform.position.y, go.transform.position.z);
+            go.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            go.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
             Animator anim = GameObject.Find(go.name).GetComponent<Animator>();
             anim.enabled = true;
             anim.runtimeAnimatorController = character.GetController(go);
         }
+
+        character.body.transform.parent.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        character.body.transform.parent.position = new Vector3(-7.0f, 0.0f, 0.0f);
         SceneManager.LoadScene(1);
     }
     

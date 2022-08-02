@@ -41,7 +41,7 @@ public class AddShoes : MonoBehaviour
             footwear.SetActive(false);
             print(footwear);
             character.shoes = footwear;
-            DontDestroyOnLoad(character.shoes);
+            // DontDestroyOnLoad(character.shoes);
             SpriteRenderer sr = character.shoes.GetComponent<SpriteRenderer>();
             if (character.bodyShape == 's' && text == "\"shoes\"") {
                 sr.sprite = sGreen;
