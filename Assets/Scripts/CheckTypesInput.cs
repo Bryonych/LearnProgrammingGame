@@ -6,12 +6,13 @@ using TMPro;
 public class CheckTypesInput : MonoBehaviour
 {
    
+    public Character character;
     public TMP_InputField currentField;
     public GameObject errorWindow;
     public GameObject displayWindow;
-    public GameObject nextWindow;
+    public GameObject[] nextWindow;
     public TextMeshProUGUI errorText;
-    public GameObject button;
+    
 
     public void OnStoppedEditing(string text) {
         errorWindow.SetActive(false);
@@ -22,6 +23,7 @@ public class CheckTypesInput : MonoBehaviour
                     errorWindow.SetActive(true);
                 }
                 else {
+                    character.setName(text.Substring(1,text.Length-2));
                     ChangeWindow();
                 }
             }
@@ -40,7 +42,12 @@ public class CheckTypesInput : MonoBehaviour
                     errorText.text = "An integer is a number with no decimal place";
                     errorWindow.SetActive(true);
                 }
+                else if (text == "007") {
+                    errorText.text = "Sorry, we have an agent with that number already";
+                    errorWindow.SetActive(true);
+                }
                 else {
+                    character.setAgentNumber(text);
                     ChangeWindow();
                 }
             }
@@ -84,9 +91,17 @@ public class CheckTypesInput : MonoBehaviour
                     errorWindow.SetActive(true);
                 }
                 else {
-                    displayWindow.SetActive(false);
-                    errorWindow.SetActive(false);
-                    button.SetActive(true);
+                    if (text == "true") {
+                        character.hasHat = true;
+                        displayWindow.SetActive(false);
+                        nextWindow[1].SetActive(true);
+                    }
+                    else {
+                        // displayWindow.SetActive(false);
+                        // errorWindow.SetActive(false);
+                        // button.SetActive(true);
+                        ChangeWindow();
+                    }
                 }
             }
         }
@@ -94,7 +109,7 @@ public class CheckTypesInput : MonoBehaviour
 
     public void ChangeWindow() {
         displayWindow.SetActive(false);
-        nextWindow.SetActive(true);
+        nextWindow[0].SetActive(true);
     }
 
     void Start() {

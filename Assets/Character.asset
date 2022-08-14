@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e29f080faf824c4ea463de275031528, type: 3}
   m_Name: Character
   m_EditorClassIdentifier: 
-  name: 
-  age: 0
   body: {fileID: 0}
   hair: {fileID: 0}
   hat: {fileID: 0}
@@ -22,17 +20,9 @@ MonoBehaviour:
   top: {fileID: 0}
   bottoms: {fileID: 0}
   shoes: {fileID: 0}
-  staticBody: []
-  staticHair: []
-  staticHat: []
-  staticGlasses: []
-  staticMask: []
-  staticTop: []
-  staticBottoms: []
-  staticShoes: []
   hasHair: 0
-  hasHat: 0
+  hasHat: 1
   hasGlasses: 0
   hasMask: 0
   hasShoes: 0
-  bodyShape: 0
+  bodyShape: 115

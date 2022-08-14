@@ -30,7 +30,7 @@ public class CheckLogic : MonoBehaviour {
                     errorWindow.SetActive(true);
                 }
                 else {
-                    character.name = newText;
+                    // character.name = newText;
                 }
             }
             else if (currentField.name == "AgeInputField") {
@@ -39,7 +39,7 @@ public class CheckLogic : MonoBehaviour {
                     errorWindow.SetActive(true);
                 }
                 else {
-                    character.age = age;
+                    // character.age = age;
                 }
             }
             else {

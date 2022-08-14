@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Character", menuName = "Character")]
 public class Character : ScriptableObject {
 
-    public new string name;
-    public int age;
+    private new string name;
+    private new string agentNumber;
 
     public GameObject body;
     public GameObject hair;
@@ -16,15 +16,6 @@ public class Character : ScriptableObject {
     public GameObject top;
     public GameObject bottoms;
     public GameObject shoes;
-
-    public Sprite[] staticBody;
-    public Sprite[] staticHair;
-    public Sprite[] staticHat;
-    public Sprite[] staticGlasses;
-    public Sprite[] staticMask;
-    public Sprite[] staticTop;
-    public Sprite[] staticBottoms;
-    public Sprite[] staticShoes;
 
     RuntimeAnimatorController bodyController;
     RuntimeAnimatorController hairController;
@@ -80,66 +71,20 @@ public class Character : ScriptableObject {
         else { return null; }
     }
 
-    // public string[] GetClips(GameObject bodyPart) {
-    //     if (bodyPart.name == "Body") {
-    //         return animBody;
-    //     }
-    //     else if (bodyPart.name == "Hair") {
-    //         return animHair;
-    //     }
-    //     else if (bodyPart.name == "Hat") {
-    //         return animHat;
-    //     }
-    //     else if (bodyPart.name == "Glasses") {
-    //         return animGlasses;
-    //     }
-    //     else if (bodyPart.name == "Mask") {
-    //         return animMask;
-    //     }
-    //     else if (bodyPart.name == "Top") {
-    //         return animTop;
-    //     }
-    //     else if (bodyPart.name == "Bottoms") {
-    //         return animBottoms;
-    //     }
-    //     else if (bodyPart.name == "Shoes") {
-    //         return animShoes;
-    //     }
-    //     else {
-    //         // console.log("Invalid game object");
-    //         return null;
-    //     }
-    // }
+    public void setName(string name) {
+        this.name = name;
+    }
 
-    // public Sprite[] GetSprites(GameObject bodyPart) {
-    //     if (bodyPart.name == "Body") {
-    //         return staticBody;
-    //     }
-    //     else if (bodyPart.name == "Hair") {
-    //         return staticHair;
-    //     }
-    //     else if (bodyPart.name == "Hat") {
-    //         return staticHat;
-    //     }
-    //     else if (bodyPart.name == "Glasses") {
-    //         return staticGlasses;
-    //     }
-    //     else if (bodyPart.name == "Mask") {
-    //         return staticMask;
-    //     }
-    //     else if (bodyPart.name == "Top") {
-    //         return staticTop;
-    //     }
-    //     else if (bodyPart.name == "Bottoms") {
-    //         return staticBottoms;
-    //     }
-    //     else if (bodyPart.name == "Shoes") {
-    //         return staticShoes;
-    //     }
-    //     else {
-    //         // console.log("Invalid game object");
-    //         return null;
-    //     }
-    // }
-  
+    public void setAgentNumber(string age) {
+        this.agentNumber = age;
+    }
+
+    public string getName() {
+        return name;
+    }
+
+    public string getAgentNumber() {
+        return agentNumber;
+    }
+
 }

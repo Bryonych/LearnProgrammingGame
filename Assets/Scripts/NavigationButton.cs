@@ -18,8 +18,17 @@ public class NavigationButton : MonoBehaviour
         if (Panel != null) {
             Panel.SetActive(true);
         }
-        
+        if (Panel.name == "LessonPanel") {
+            Panel.transform.GetChild(2).gameObject.SetActive(true);
+            Panel.transform.GetChild(1).gameObject.SetActive(false);
+        }
     } 
+
+    public void resetBody() {
+        SpriteRenderer sr = character.body.GetComponent<SpriteRenderer>();
+        sr.sprite = null; 
+        character.body.SetActive(true);
+    }
 
     public void RemoveCharacter() {
         print("number of parts: " + character.getParts().Count);

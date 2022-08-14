@@ -22,6 +22,7 @@ public class CreateCharacter : MonoBehaviour
         character.resetParts();
         if (body == null) {
             body = GameObject.Find("Body");
+            print(body.name);
         }
         body.SetActive(true);
         character.body = body;
