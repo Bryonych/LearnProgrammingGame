@@ -33,11 +33,11 @@ public class AddTop : MonoBehaviour
             top.SetActive(false);
             character.top = top;
             SpriteRenderer sr = character.top.GetComponent<SpriteRenderer>();
-            if (character.bodyShape == 's' && float.TryParse(text, out b)) {
+            if (character.bodyShape == 's' && text.Contains('.') && float.TryParse(text, out b)) {
                 sr.sprite = sBusiness; 
                 character.setController("Top", controller[0]);
             }
-            else if (character.bodyShape == 'h' && float.TryParse(text, out b)) {
+            else if (character.bodyShape == 'h' && text.Contains('.') && float.TryParse(text, out b)) {
                 sr.sprite = hBusiness;
                 character.setController("Top", controller[2]);
             }

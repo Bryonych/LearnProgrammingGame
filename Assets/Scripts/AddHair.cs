@@ -10,7 +10,6 @@ public class AddHair : MonoBehaviour
     public GameObject errorWindow;
     public GameObject displayWindow;
     public GameObject nextWindow;
-    // public GameObject[] otherWindows;
     public Character character;
     public TextMeshProUGUI errorText;
     public GameObject hair;
@@ -22,20 +21,15 @@ public class AddHair : MonoBehaviour
 
     public void OnStoppedEditing(string text) {
         errorWindow.SetActive(false);
-        // CloseOthers();
-        // if (!character.hasHair) {
-        //     errorText.text = "Character's hasHair field was set to false";
-        //     errorWindow.SetActive(true);
-        // }
-        // else if (text.Length > 0 && text[text.Length-1] == ';') {
-        //     errorText.text = "\";\" Only required at the end of a statement";
-        //     errorWindow.SetActive(true);
-        // }
         if (text[0] != '\"' || text[text.Length-1] != '\"') {
             errorText.text = "A string needs to be in quotation marks";
             errorWindow.SetActive(true);
         }
-        else if (text == "\"long green\"" || text == "\"short black\"" || text == "\"dreads\"" || text == "\"short orange\"") {
+        else if (text == "") {
+            ChangeWindow();
+        }
+        else if (text == "\"long green\"" || text == "\"short black\"" || text == "\"dreads\"" 
+                || text == "\"short orange\"") {
             if (hair == null) {
                 hair = GameObject.Find("Hair");
             }
@@ -71,12 +65,6 @@ public class AddHair : MonoBehaviour
         displayWindow.SetActive(false);
         nextWindow.SetActive(true);
     }
-
-    // public void CloseOthers() {
-    //     foreach (GameObject window in otherWindows) {
-    //         window.SetActive(false);
-    //     }
-    // }
 
 
     // Start is called before the first frame update
