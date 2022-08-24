@@ -20,6 +20,7 @@ MonoBehaviour:
   top: {fileID: 0}
   bottoms: {fileID: 0}
   shoes: {fileID: 0}
+  challengeCanvas: {fileID: 7043382365758435172, guid: 127eded9cf39eb0419db2792cb50511b, type: 3}
   hasHair: 0
   hasHat: 1
   hasGlasses: 0

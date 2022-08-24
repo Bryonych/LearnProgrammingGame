@@ -59,6 +59,5 @@ public class NavigationButton : MonoBehaviour
         character.body.transform.parent.position = new Vector3(-7.0f, 0.0f, 0.0f);
         SceneManager.LoadScene(1);
     }
-    
 
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Character : ScriptableObject {
 
     private new string name;
-    private new string agentNumber;
+    private string agentNumber;
 
     public GameObject body;
     public GameObject hair;
@@ -23,7 +23,10 @@ public class Character : ScriptableObject {
     RuntimeAnimatorController topController;
     RuntimeAnimatorController bottomsController;
     RuntimeAnimatorController shoesController;
-    
+
+    private int challengeNumber = 0;    
+
+    public GameObject challengeCanvas;
 
     List<GameObject> parts = new List<GameObject>();
 
@@ -49,6 +52,14 @@ public class Character : ScriptableObject {
 
     public List<GameObject> getParts() {
         return parts;
+    }
+
+    public void increaseChallengeNumber() {
+        challengeNumber +=1;
+    }
+
+    public int getChallengeNumber() {
+        return challengeNumber;
     }
 
     public void setController(string part, RuntimeAnimatorController c) {

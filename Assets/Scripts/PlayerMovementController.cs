@@ -12,7 +12,6 @@ public class PlayerMovementController : MonoBehaviour
     Rigidbody2D rbody;
 
     private void Awake() {
-        // rbody = GetComponent<Rigidbody2D>();
         rbody = transform.parent.GetComponent<Rigidbody2D>();
         isoRenderer = GetComponentInChildren<PlayerRenderer>();
     }
@@ -58,5 +57,16 @@ public class PlayerMovementController : MonoBehaviour
         return direction;
     }
 
+    // public void checkForChallenge(Vector2 pos) {
+    //     if (pos.x < -22.0 && pos.x > -24.8 && pos.y < -10.0 && pos.y > -13.4 && isoRenderer.character.getChallengeNumber() == 0) {
+    //         print("here");
+    //         isoRenderer.character.challengeCanvas.SetActive(true);
+    //         // GameObject firstPanel = GameObject.Find("ListAndIterationLesson");
+    //         // firstPanel.SetActive(true);
+    //         // first.SetActive(true);
+    //         // return true;
+    //     }
+    //     // return false;
+    // }
 
 }
