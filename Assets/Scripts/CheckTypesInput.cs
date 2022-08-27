@@ -27,15 +27,6 @@ public class CheckTypesInput : MonoBehaviour
                     ChangeWindow();
                 }
             }
-            else if (currentField.name == "CharInputField") {
-                if (text.Length != 1) {
-                    errorText.text = "A char is one character";
-                    errorWindow.SetActive(true);
-                }
-                else {
-                    ChangeWindow();
-                }
-            }
             else if (currentField.name == "IntInputField") {
                 int a;
                 if (!int.TryParse(text, out a)) {

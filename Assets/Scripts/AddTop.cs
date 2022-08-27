@@ -20,32 +20,26 @@ public class AddTop : MonoBehaviour
 
     public void OnStoppedEditing(string text) {
         errorWindow.SetActive(false);
-        int a;
-        float b;
-        if (!int.TryParse(text, out a) && !float.TryParse(text, out b)) {
-            errorText.text = "An integer is a number with no decimal place and a float is a number with a decimal place";
-            errorWindow.SetActive(true);
-        }
-        else {
+        if (text == "true" || text == "false") {
             if (top == null) {
                 top = GameObject.Find("Top");
             }
             top.SetActive(false);
             character.top = top;
             SpriteRenderer sr = character.top.GetComponent<SpriteRenderer>();
-            if (character.bodyShape == 's' && text.Contains('.') && float.TryParse(text, out b)) {
+            if (character.bodyShape == 's' && text == "false") {
                 sr.sprite = sBusiness; 
                 character.setController("Top", controller[0]);
             }
-            else if (character.bodyShape == 'h' && text.Contains('.') && float.TryParse(text, out b)) {
+            else if (character.bodyShape == 'h' && text == "false") {
                 sr.sprite = hBusiness;
                 character.setController("Top", controller[2]);
             }
-            else if (character.bodyShape == 's' && int.TryParse(text, out a)) {
+            else if (character.bodyShape == 's' && text == "true") {
                 sr.sprite = sTShirt;
                 character.setController("Top", controller[1]);
             }
-            else if (character.bodyShape == 'h' && int.TryParse(text, out a)) {
+            else if (character.bodyShape == 'h' && text == "true") {
                 sr.sprite = hTShirt;
                 character.setController("Top", controller[3]);
             }
@@ -56,6 +50,10 @@ public class AddTop : MonoBehaviour
             displayWindow.SetActive(false);
             errorWindow.SetActive(false);
             button.SetActive(true);
+        }
+        else {
+            errorText.text = "A boolean is either true or false";
+            errorWindow.SetActive(true);
         }
     }
 

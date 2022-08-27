@@ -20,14 +20,6 @@ public class AddBottoms : MonoBehaviour
 
     public void OnStoppedEditing(string text) {
         errorWindow.SetActive(false);
-        // if (text.Length > 0 && text[text.Length-1] == ';') {
-        //     errorText.text = "\";\" Only required at the end of a statement";
-        //     errorWindow.SetActive(true);
-        // }
-        // else if (text[0] != '\"' || text[text.Length-1] != '\"') {
-        //     errorText.text = "Requires a string, which needs quotation marks";
-        //     errorWindow.SetActive(true);
-        // }
         if (text == "true" || text == "false") {
             if (bottoms == null) {
                 bottoms = GameObject.Find("Bottoms");
