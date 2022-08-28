@@ -61,21 +61,21 @@ public class CheckTypesInput : MonoBehaviour
                     ChangeWindow();
                 }
             }
-            else if (currentField.name == "DoubleInputField") {
-                double a;
-                if (!double.TryParse(text, out a)) {
-                    errorText.text = "A double is a number with up to 16 digits.";
-                    errorWindow.SetActive(true);
-                }
-                else if (!text.Contains('.')) {
-                    errorText.text = "A double must have a decimal place." 
-                            +" If a double is a whole number, its decimal is zero. eg. 1.0";
-                    errorWindow.SetActive(true);
-                }
-                else {
-                    ChangeWindow();
-                }
-            }
+            // else if (currentField.name == "DoubleInputField") {
+            //     double a;
+            //     if (!double.TryParse(text, out a)) {
+            //         errorText.text = "A double is a number with up to 16 digits.";
+            //         errorWindow.SetActive(true);
+            //     }
+            //     else if (!text.Contains('.')) {
+            //         errorText.text = "A double must have a decimal place." 
+            //                 +" If a double is a whole number, its decimal is zero. eg. 1.0";
+            //         errorWindow.SetActive(true);
+            //     }
+            //     else {
+            //         ChangeWindow();
+            //     }
+            // }
             else if (currentField.name == "BooleanInputField") {
                 if (text != "true" && text != "false") {
                     errorText.text = "A boolean can be either true or false";
@@ -88,13 +88,11 @@ public class CheckTypesInput : MonoBehaviour
                         nextWindow[1].SetActive(true);
                     }
                     else {
-                        // displayWindow.SetActive(false);
-                        // errorWindow.SetActive(false);
-                        // button.SetActive(true);
                         ChangeWindow();
                     }
                 }
             }
+    
         }
     }
 

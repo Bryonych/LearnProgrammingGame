@@ -20,6 +20,7 @@ public class CreateCharacter : MonoBehaviour
     
     public void SelectBody(Sprite bd) {
         character.resetParts();
+        character.resetChallengeNumber();
         if (body == null) {
             body = GameObject.Find("Body");
             print(body.name);

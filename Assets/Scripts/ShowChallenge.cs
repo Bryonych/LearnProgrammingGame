@@ -7,7 +7,6 @@ public class ShowChallenge : MonoBehaviour
     
     public GameObject canvas;
     public GameObject firstPanel;
-    public GameObject grid;
     public Character character;
     public int challengeNumber;
 

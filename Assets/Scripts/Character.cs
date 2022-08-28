@@ -62,6 +62,10 @@ public class Character : ScriptableObject {
         return challengeNumber;
     }
 
+    public void resetChallengeNumber() {
+        challengeNumber = 0;
+    }
+
     public void setController(string part, RuntimeAnimatorController c) {
         if (part == "Body") { bodyController = c; }
         else if (part == "Hair") { hairController = c; }
