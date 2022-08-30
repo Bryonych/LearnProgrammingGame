@@ -3266,7 +3266,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -436.96002, y: -205.61}
+  m_AnchoredPosition: {x: -436.95996, y: -205.61}
   m_SizeDelta: {x: -873.92, y: 82.135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &206081801
@@ -7074,12 +7074,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 606d9fee8b7479441b929069bb0149b7, type: 2}
   bodies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1518416554, guid: 8c80fbee6502ca54b928eab1032ca102, type: 3}
+  - {fileID: 1040672444, guid: 2c237fb82ca9b834e81e304e768c58db, type: 3}
+  - {fileID: 1441826831, guid: cebdea5cc86b74b4db443214730b7309, type: 3}
+  - {fileID: 1399277783, guid: c8af6297ae7c3dc40b2f84ddf7a13145, type: 3}
   bodyAnimations: []
-  controller: {fileID: 0}
+  controller: {fileID: 9100000, guid: 9ce0635e6e06f994cb97cc72fe687fd8, type: 2}
 --- !u!1 &415296693
 GameObject:
   m_ObjectHideFlags: 0
@@ -8799,7 +8799,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 597919233}
         m_TargetAssemblyTypeName: CreateCharacter, Assembly-CSharp
         m_MethodName: SelectBody
         m_Mode: 2
@@ -8818,18 +8818,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CreateCharacter, Assembly-CSharp
-        m_MethodName: SelectBottoms
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1691611300, guid: c1d8db471fe3fea48932e52f563b2bf7, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8901,9 +8889,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 606d9fee8b7479441b929069bb0149b7, type: 2}
-  bodies: []
+  bodies:
+  - {fileID: 1714092765, guid: 8c80fbee6502ca54b928eab1032ca102, type: 3}
+  - {fileID: -411827269, guid: 2c237fb82ca9b834e81e304e768c58db, type: 3}
+  - {fileID: 1678693702, guid: cebdea5cc86b74b4db443214730b7309, type: 3}
+  - {fileID: 2114874158, guid: c8af6297ae7c3dc40b2f84ddf7a13145, type: 3}
   bodyAnimations: []
-  controller: {fileID: 0}
+  controller: {fileID: 9100000, guid: 72d25cb7522086d4f91ccb5e2c11d4e9, type: 2}
 --- !u!1 &602511161
 GameObject:
   m_ObjectHideFlags: 0
@@ -14528,7 +14520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -417.11017, y: -257.16}
+  m_AnchoredPosition: {x: -417.1101, y: -257.16}
   m_SizeDelta: {x: -834.21, y: 82.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1100189960
@@ -16112,7 +16104,7 @@ MonoBehaviour:
   nextWindow: {fileID: 109274846}
   character: {fileID: 11400000, guid: 606d9fee8b7479441b929069bb0149b7, type: 2}
   errorText: {fileID: 891290721}
-  bottoms: {fileID: 0}
+  bottoms: {fileID: 689310743}
   sTrousers: {fileID: 1788173991, guid: c1d8db471fe3fea48932e52f563b2bf7, type: 3}
   hTrousers: {fileID: -1458539107, guid: c1d8db471fe3fea48932e52f563b2bf7, type: 3}
   sShorts: {fileID: 205211901, guid: c1d8db471fe3fea48932e52f563b2bf7, type: 3}
@@ -16120,8 +16112,8 @@ MonoBehaviour:
   controller:
   - {fileID: 9100000, guid: abebe2779c5486c448c3446aa5a57851, type: 2}
   - {fileID: 9100000, guid: 3d1e27d7a22fb2b49b6233e13b2f7c0a, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 9100000, guid: d64eb3c9761f9cc4eb496932aaf04b11, type: 2}
+  - {fileID: 9100000, guid: 51a2ed01f8fe557479be246c5dff6134, type: 2}
 --- !u!1 &1197792284
 GameObject:
   m_ObjectHideFlags: 0
@@ -23449,8 +23441,8 @@ MonoBehaviour:
   controller:
   - {fileID: 9100000, guid: 8a87db1d061158a4babdb9cacc43f1dd, type: 2}
   - {fileID: 9100000, guid: 1c8bfac9a288ff24d8c3faa457807901, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 9100000, guid: 5e5f0ca947357194db29369e09ca7707, type: 2}
+  - {fileID: 9100000, guid: 5e5f0ca947357194db29369e09ca7707, type: 2}
 --- !u!1 &1766472580
 GameObject:
   m_ObjectHideFlags: 0
@@ -27148,7 +27140,8 @@ MonoBehaviour:
   topHat: {fileID: 1913930124, guid: c1d8db471fe3fea48932e52f563b2bf7, type: 3}
   controller:
   - {fileID: 9100000, guid: 6b4873b526a2bd449ace35e877cf5be7, type: 2}
-  - {fileID: 0}
+  - {fileID: 9100000, guid: 35afbaee6a87c26499a2ca2f1e4bbf7c, type: 2}
+  - {fileID: 9100000, guid: c3df31956d3eede45884edf715ae7e2b, type: 2}
 --- !u!1 &2050876733
 GameObject:
   m_ObjectHideFlags: 0
@@ -28062,8 +28055,8 @@ MonoBehaviour:
   controller:
   - {fileID: 9100000, guid: cbfd15fdb7c958c4dae57a9f950d6081, type: 2}
   - {fileID: 9100000, guid: 9527dc0c3349f054eac946a01498a6a9, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 9100000, guid: 2ec6ad8ec7bc3d244b6d8b37e578ee7a, type: 2}
+  - {fileID: 9100000, guid: 3526aaec1017d104c8a71867bba8d4fe, type: 2}
   button: {fileID: 1766472580}
 --- !u!1 &2100576028
 GameObject:
@@ -28470,5 +28463,7 @@ MonoBehaviour:
   controller:
   - {fileID: 9100000, guid: 8a988da0768442b40a126b0f62868598, type: 2}
   - {fileID: 9100000, guid: 14ab6302e99c3cf40b26fc1323e46d68, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 9100000, guid: 86d4f2bd7c8245443b3ff537df6e6859, type: 2}
+  - {fileID: 9100000, guid: e79ab5fbba279f1418bfbb58872d204d, type: 2}
+  - {fileID: 9100000, guid: ac984da7c6e1ff7409d3f497d0f69333, type: 2}
+  - {fileID: 9100000, guid: 7540127d5aef7084099586c3a3d25007, type: 2}

@@ -42,9 +42,13 @@ public class AddHat : MonoBehaviour
                 sr.sprite = cap; 
                 character.setController("Hat", controller[1]);
             }
-            else if (text == "\"top hat\"") {
+            else if (character.bodyShape == 's' && text == "\"top hat\"") {
                 sr.sprite = topHat;
                 character.setController("Hat", controller[0]);
+            }
+            else if (character.bodyShape == 'h' && text == "\"top hat\"") {
+                sr.sprite = topHat;
+                character.setController("Hat", controller[2]);
             }
             character.addPart(character.hat);
             ChangeWindow();

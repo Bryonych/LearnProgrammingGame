@@ -37,7 +37,7 @@ public class AddHair : MonoBehaviour
                 hair.SetActive(false);
                 character.hair = hair;
                 SpriteRenderer sr = character.hair.GetComponent<SpriteRenderer>();
-                if (text == "\"long green\"") {
+                if (character.bodyShape == 's' && text == "\"long green\"") {
                     sr.sprite = longGreen; 
                     character.setController("Hair", controller[0]);
                 }
@@ -45,13 +45,21 @@ public class AddHair : MonoBehaviour
                     sr.sprite = shortBlack;
                     character.setController("Hair", controller[2]);
                 }
-                else if (text == "\"dreads\"") {
+                else if (character.bodyShape == 's' && text == "\"dreads\"") {
                     sr.sprite = dreads;
                     character.setController("Hair", controller[1]);
                 }
                 else if (text == "\"short orange\"") {
                     sr.sprite = shortOrange;
                     character.setController("Hair", controller[3]);
+                }
+                else if (character.bodyShape == 'h' && text == "\"dreads\"") {
+                    sr.sprite = dreads;
+                    character.setController("Hair", controller[4]);
+                }
+                else if (character.bodyShape == 'h' && text == "\"long green\"") {
+                    sr.sprite = longGreen; 
+                    character.setController("Hair", controller[5]);
                 }
                 character.addPart(character.hair);
                 ChangeWindow();
