@@ -3694,7 +3694,7 @@ MonoBehaviour:
   errorWindow: {fileID: 1145469647}
   displayWindow: {fileID: 792493637}
   nextWindow:
-  - {fileID: 1039248446}
+  - {fileID: 236531966}
   - {fileID: 410847073}
   errorText: {fileID: 210147533}
 --- !u!114 &228440942
@@ -3867,7 +3867,7 @@ RectTransform:
   - {fileID: 1659031320}
   - {fileID: 1456708753}
   m_Father: {fileID: 1709207792}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -5971,7 +5971,7 @@ MonoBehaviour:
   errorWindow: {fileID: 1417500583}
   displayWindow: {fileID: 2017031488}
   nextWindow:
-  - {fileID: 236531966}
+  - {fileID: 890282993}
   errorText: {fileID: 26363736}
 --- !u!1 &336527422
 GameObject:
@@ -7282,7 +7282,7 @@ MonoBehaviour:
   errorWindow: {fileID: 342171049}
   displayWindow: {fileID: 1832590643}
   nextWindow:
-  - {fileID: 792493637}
+  - {fileID: 1039248446}
   errorText: {fileID: 89405341}
 --- !u!114 &418399075
 MonoBehaviour:
@@ -8818,6 +8818,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 597919233}
+        m_TargetAssemblyTypeName: CreateCharacter, Assembly-CSharp
+        m_MethodName: SelectBottoms
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1691611300, guid: c1d8db471fe3fea48932e52f563b2bf7, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10833,7 +10845,7 @@ RectTransform:
   - {fileID: 1145469650}
   - {fileID: 2002939902}
   m_Father: {fileID: 1709207792}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -12685,7 +12697,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890282993}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12694,12 +12706,12 @@ RectTransform:
   - {fileID: 1538366015}
   - {fileID: 1100189959}
   m_Father: {fileID: 1709207792}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -107.232544}
-  m_SizeDelta: {x: -72, y: -277.53497}
+  m_SizeDelta: {x: -72, y: -277.535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &890282995
 MonoBehaviour:
@@ -20525,7 +20537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -155.09}
+  m_AnchoredPosition: {x: 0, y: -155.09001}
   m_SizeDelta: {x: 0, y: -310.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1539908116
@@ -21477,7 +21489,7 @@ RectTransform:
   - {fileID: 36725539}
   - {fileID: 206081800}
   m_Father: {fileID: 1709207792}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -22705,11 +22717,11 @@ RectTransform:
   - {fileID: 1729711588}
   - {fileID: 1766472581}
   - {fileID: 2017031489}
-  - {fileID: 236531967}
   - {fileID: 890282994}
+  - {fileID: 792493638}
+  - {fileID: 236531967}
   - {fileID: 1832590644}
   - {fileID: 1566605268}
-  - {fileID: 792493638}
   - {fileID: 1039248447}
   - {fileID: 384855200}
   - {fileID: 95498333}
@@ -23430,7 +23442,7 @@ MonoBehaviour:
   currentField: {fileID: 1753937286}
   errorWindow: {fileID: 1659031317}
   displayWindow: {fileID: 236531966}
-  nextWindow: {fileID: 890282993}
+  nextWindow: {fileID: 1832590643}
   character: {fileID: 11400000, guid: 606d9fee8b7479441b929069bb0149b7, type: 2}
   errorText: {fileID: 128581614}
   footwear: {fileID: 0}
@@ -24316,7 +24328,7 @@ RectTransform:
   - {fileID: 342171052}
   - {fileID: 1392937222}
   m_Father: {fileID: 1709207792}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -24570,7 +24582,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -25328,7 +25340,7 @@ MonoBehaviour:
   errorWindow: {fileID: 1538366012}
   displayWindow: {fileID: 890282993}
   nextWindow:
-  - {fileID: 1832590643}
+  - {fileID: 792493637}
   errorText: {fileID: 1549250700}
 --- !u!114 &1939658528
 MonoBehaviour:
@@ -27132,7 +27144,7 @@ MonoBehaviour:
   currentField: {fileID: 2046908209}
   errorWindow: {fileID: 1788479087}
   displayWindow: {fileID: 410847073}
-  nextWindow: {fileID: 1039248446}
+  nextWindow: {fileID: 236531966}
   character: {fileID: 11400000, guid: 606d9fee8b7479441b929069bb0149b7, type: 2}
   errorText: {fileID: 1595252950}
   hat: {fileID: 0}
@@ -27142,6 +27154,7 @@ MonoBehaviour:
   - {fileID: 9100000, guid: 6b4873b526a2bd449ace35e877cf5be7, type: 2}
   - {fileID: 9100000, guid: 35afbaee6a87c26499a2ca2f1e4bbf7c, type: 2}
   - {fileID: 9100000, guid: c3df31956d3eede45884edf715ae7e2b, type: 2}
+  - {fileID: 9100000, guid: 7458917a39a3c184d97b6aa3c311226f, type: 2}
 --- !u!1 &2050876733
 GameObject:
   m_ObjectHideFlags: 0
@@ -28467,3 +28480,5 @@ MonoBehaviour:
   - {fileID: 9100000, guid: e79ab5fbba279f1418bfbb58872d204d, type: 2}
   - {fileID: 9100000, guid: ac984da7c6e1ff7409d3f497d0f69333, type: 2}
   - {fileID: 9100000, guid: 7540127d5aef7084099586c3a3d25007, type: 2}
+  - {fileID: 9100000, guid: d597d2eab1803454d93fa4a1a5187cbd, type: 2}
+  - {fileID: 9100000, guid: 03faeffe667689643a3d05c2b5051f64, type: 2}

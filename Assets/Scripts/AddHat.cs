@@ -19,14 +19,6 @@ public class AddHat : MonoBehaviour
 
     public void OnStoppedEditing(string text) {
         errorWindow.SetActive(false);
-        // if (!character.hasHat) {
-        //     errorText.text = "Character's hasHat field was set to false";
-        //     errorWindow.SetActive(true);
-        // }
-        // else if (text.Length > 0 && text[text.Length-1] == ';') {
-        //     errorText.text = "\";\" Only required at the end of a statement";
-        //     errorWindow.SetActive(true);
-        // }
         if (text[0] != '\"' || text[text.Length-1] != '\"') {
             errorText.text = "A string is in quotation marks";
             errorWindow.SetActive(true);
@@ -38,7 +30,7 @@ public class AddHat : MonoBehaviour
             hat.SetActive(false);
             character.hat = hat;
             SpriteRenderer sr = character.hat.GetComponent<SpriteRenderer>();
-            if (text == "\"cap\"") {
+            if (character.bodyShape == 'h' && text == "\"cap\"") {
                 sr.sprite = cap; 
                 character.setController("Hat", controller[1]);
             }
@@ -49,6 +41,10 @@ public class AddHat : MonoBehaviour
             else if (character.bodyShape == 'h' && text == "\"top hat\"") {
                 sr.sprite = topHat;
                 character.setController("Hat", controller[2]);
+            }
+            else if (character.bodyShape == 's' && text == "\"cap\"") {
+                sr.sprite = cap; 
+                character.setController("Hat", controller[3]);
             }
             character.addPart(character.hat);
             ChangeWindow();

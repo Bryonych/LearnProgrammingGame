@@ -41,7 +41,7 @@ public class AddHair : MonoBehaviour
                     sr.sprite = longGreen; 
                     character.setController("Hair", controller[0]);
                 }
-                else if (text == "\"short black\"") {
+                else if (character.bodyShape == 'h' && text == "\"short black\"") {
                     sr.sprite = shortBlack;
                     character.setController("Hair", controller[2]);
                 }
@@ -49,7 +49,7 @@ public class AddHair : MonoBehaviour
                     sr.sprite = dreads;
                     character.setController("Hair", controller[1]);
                 }
-                else if (text == "\"short orange\"") {
+                else if (character.bodyShape == 'h' && text == "\"short orange\"") {
                     sr.sprite = shortOrange;
                     character.setController("Hair", controller[3]);
                 }
@@ -60,6 +60,14 @@ public class AddHair : MonoBehaviour
                 else if (character.bodyShape == 'h' && text == "\"long green\"") {
                     sr.sprite = longGreen; 
                     character.setController("Hair", controller[5]);
+                }
+                else if (character.bodyShape == 's' && text == "\"short black\"") {
+                    sr.sprite = shortBlack;
+                    character.setController("Hair", controller[6]);
+                }
+                else if (character.bodyShape == 's' && text == "\"short orange\"") {
+                    sr.sprite = shortOrange;
+                    character.setController("Hair", controller[7]);
                 }
                 character.addPart(character.hair);
                 ChangeWindow();
