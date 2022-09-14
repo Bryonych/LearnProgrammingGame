@@ -9,8 +9,12 @@ public class RevealClue : MonoBehaviour
     public TMP_InputField currentField;
     public GameObject errorWindow;
     public GameObject displayWindow;
+    public GameObject nextWindow;
     public GameObject[] clues;
     public TextMeshProUGUI errorText;
+    private int current = 0;
+    public GameObject[] screens;
+    public GameObject button;
 
     
     public void OnStoppedEditing(string text) {
@@ -18,32 +22,52 @@ public class RevealClue : MonoBehaviour
         errorWindow.SetActive(false);
         if (text.Length > 0) {
             if (currentField.name == "ListAccessInputField") {
-                if (!text.StartsWith("barrels")) {
-                    errorText.text = "To access an item in a list, start with the list's name - barrels";
-                    errorWindow.SetActive(true);
-                }
-                else if (!text.StartsWith("barrels[")) {
-                    errorText.text = "To access an item in a list, start with the list's name and then enter the index number in [ ] afterwards";
-                    errorWindow.SetActive(true);
-                }
-                else if (text[8] != '0' && text[8] != '1' && text[8] != '2' && text[8] != '3') {
-                    errorText.text = "The available index numbers in the list are 0, 1, 2 and 3";
-                    errorWindow.SetActive(true);
-                }
-                else if (text[text.Length-1] != ']') {
-                    errorText.text = "Access an element in the list like this: barrels[2]";
-                    errorWindow.SetActive(true);
-                }
-                else {
-                    ShowClue();
-                }
+                handleListAccessEntry(text);
             }
         }
     }
 
-    void ShowClue() {
+    public void handleListAccessEntry(string text) {
+        if (!text.StartsWith("barrels")) {
+            errorText.text = "To access an item in a list, start with the list's name - barrels";
+            errorWindow.SetActive(true);
+        }
+        else if (!text.StartsWith("barrels[")) {
+            errorText.text = "To access an item in a list, start with the list's name and then enter the index number in [ ] afterwards";
+            errorWindow.SetActive(true);
+        }
+        else if (text[8] != '0' && text[8] != '1' && text[8] != '2' && text[8] != '3') {
+            errorText.text = "The available index numbers in the list are 0, 1, 2 and 3";
+            errorWindow.SetActive(true);
+        }
+        else if (text[text.Length-1] != ']') {
+            errorText.text = "Access an element in the list like this: barrels[2]";
+            errorWindow.SetActive(true);
+        }
+        else {
+            // currentField.SetActive(false);
+            displayWindow.SetActive(false);
+            nextWindow.SetActive(true);
+        }
+    }
+
+    public void DisplayError() {
+        errorText.text = "The list name is 'barrels', so our foreach loop needs to start with foreach(_ in barrels)";
+        errorWindow.SetActive(true);
+    }
+
+    public void ChangeScreen() {
+        if (current == 1) { button.SetActive(false); }
+        screens[current].SetActive(false);
+        screens[current+1].SetActive(true);
+        current += 1;
+    }
+
+    public void ShowClue() {
+        errorWindow.SetActive(false);
         character.increaseChallengeNumber();
         displayWindow.SetActive(false);
+        screens[2].SetActive(false);
         Vector3 pos = character.body.transform.position;
         if (pos.x < -20 && pos.x > -26 && pos.y < -9 && pos.y > -15) {
             clues[0].SetActive(true);

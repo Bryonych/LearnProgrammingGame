@@ -10,8 +10,6 @@ public class CreateCharacter : MonoBehaviour
     GameObject bottoms;
     GameObject hair;
     GameObject hat;
-    GameObject glasses;
-    GameObject mask;
     GameObject top;
     GameObject shoes;
     public Sprite[] bodies;

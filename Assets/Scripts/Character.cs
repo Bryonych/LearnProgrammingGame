@@ -11,8 +11,6 @@ public class Character : ScriptableObject {
     public GameObject body;
     public GameObject hair;
     public GameObject hat;
-    public GameObject glasses;
-    public GameObject mask;
     public GameObject top;
     public GameObject bottoms;
     public GameObject shoes;
