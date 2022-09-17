@@ -12,9 +12,9 @@ public class RevealClue : MonoBehaviour
     public GameObject nextWindow;
     public GameObject[] clues;
     public TextMeshProUGUI errorText;
-    private int current = 0;
     public GameObject[] screens;
     public GameObject button;
+    private int current = 0;
 
     
     public void OnStoppedEditing(string text) {
@@ -45,7 +45,6 @@ public class RevealClue : MonoBehaviour
             errorWindow.SetActive(true);
         }
         else {
-            // currentField.SetActive(false);
             displayWindow.SetActive(false);
             nextWindow.SetActive(true);
         }
