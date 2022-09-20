@@ -6,14 +6,16 @@ using System;
 public class PlayerMovementController : MonoBehaviour
 {
 
-    public float movementSpeed = 1.5f;
+    public float movementSpeed = 2.5f;
     PlayerRenderer isoRenderer;
+    AudioSource[] steps;
 
     Rigidbody2D rbody;
 
     private void Awake() {
         rbody = transform.parent.GetComponent<Rigidbody2D>();
         isoRenderer = GetComponentInChildren<PlayerRenderer>();
+        steps = GetComponentsInChildren<AudioSource>();
     }
 
     void FixedUpdate() {
@@ -55,6 +57,13 @@ public class PlayerMovementController : MonoBehaviour
         }
         direction.Normalize();
         return direction;
+    }
+
+    public void PlayLeftStep() {
+        steps[0].Play();
+    }
+    public void PlayRightStep() {
+        steps[1].Play();
     }
 
 

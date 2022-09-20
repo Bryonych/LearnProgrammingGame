@@ -15,7 +15,7 @@ public class RevealClue : MonoBehaviour
     public GameObject[] screens;
     public GameObject button;
     private int current = 0;
-
+    public AudioSource beep;
     
     public void OnStoppedEditing(string text) {
 
@@ -45,7 +45,9 @@ public class RevealClue : MonoBehaviour
             errorWindow.SetActive(true);
         }
         else {
-            displayWindow.SetActive(false);
+            beep.Play();
+            // displayWindow.SetActive(false);
+            Destroy(displayWindow, beep.clip.length);
             nextWindow.SetActive(true);
         }
     }
@@ -63,10 +65,13 @@ public class RevealClue : MonoBehaviour
     }
 
     public void ShowClue() {
+        beep.Play();
+        button.SetActive(false);
         errorWindow.SetActive(false);
         character.increaseChallengeNumber();
-        displayWindow.SetActive(false);
-        screens[2].SetActive(false);
+        // displayWindow.SetActive(false);
+        Destroy(displayWindow, beep.clip.length);
+        Destroy(screens[2], beep.clip.length);
         Vector3 pos = character.body.transform.position;
         if (pos.x < -20 && pos.x > -26 && pos.y < -9 && pos.y > -15) {
             clues[0].SetActive(true);
@@ -87,7 +92,7 @@ public class RevealClue : MonoBehaviour
         
         foreach (GameObject go in character.getParts()) {
             PlayerMovementController pmc = go.GetComponent(typeof(PlayerMovementController)) as PlayerMovementController;
-            pmc.movementSpeed = 1.5f;
+            pmc.movementSpeed = 2.5f;
         }
     }
 
