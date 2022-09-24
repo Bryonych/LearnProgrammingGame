@@ -8,14 +8,18 @@ public class PlayerMovementController : MonoBehaviour
 
     public float movementSpeed = 2.5f;
     PlayerRenderer isoRenderer;
-    AudioSource[] steps;
+    // AudioSource[] steps;
+    AudioSource left;
+    AudioSource right;
 
     Rigidbody2D rbody;
 
     private void Awake() {
         rbody = transform.parent.GetComponent<Rigidbody2D>();
         isoRenderer = GetComponentInChildren<PlayerRenderer>();
-        steps = GetComponentsInChildren<AudioSource>();
+        // steps = GetComponentsInChildren<AudioSource>();
+        left = GameObject.Find("LeftStep").GetComponent<AudioSource>();
+        right = GameObject.Find("RightStep").GetComponent<AudioSource>();
     }
 
     void FixedUpdate() {
@@ -60,10 +64,12 @@ public class PlayerMovementController : MonoBehaviour
     }
 
     public void PlayLeftStep() {
-        steps[0].Play();
+        // steps[0].Play();
+        left.Play();
     }
     public void PlayRightStep() {
-        steps[1].Play();
+        // steps[1].Play();
+        right.Play();
     }
 
 

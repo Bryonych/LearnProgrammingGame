@@ -64,6 +64,48 @@ public class Character : ScriptableObject {
         challengeNumber = 0;
     }
 
+    public GameObject getPart(string name) {
+        switch(name) {
+            case "Body":
+                return body;
+            case "Bottoms":
+                return bottoms;
+            case "Hair":
+                return hair;
+            case "Top":
+                return top;
+            case "Hat":
+                return hat;
+            case "Shoes":
+                return shoes;
+            default:
+                return null;
+        }
+    }
+
+    public void setPart(string name, GameObject go) {
+         switch(name) {
+            case "Body":
+                this.body = go;
+                break;
+            case "Bottoms":
+                this.bottoms = go;
+                break;
+            case "Hair":
+                this.hair = go;
+                break;
+            case "Top":
+                this.top = go;
+                break;
+            case "Hat":
+                this.hat = go;
+                break;
+            case "Shoes":
+                this.shoes = go;
+                break;
+        }
+    }
+
     public void setController(string part, RuntimeAnimatorController c) {
         if (part == "Body") { bodyController = c; }
         else if (part == "Hair") { hairController = c; }
