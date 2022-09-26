@@ -15,7 +15,8 @@ public class RevealClue : MonoBehaviour
     public GameObject[] screens;
     public GameObject button;
     private int current = 0;
-    public AudioSource beep;
+    AudioSource beep;
+    AudioSource bomp;
     
     public void OnStoppedEditing(string text) {
 
@@ -29,20 +30,20 @@ public class RevealClue : MonoBehaviour
 
     public void handleListAccessEntry(string text) {
         if (!text.StartsWith("barrels")) {
-            errorText.text = "To access an item in a list, start with the list's name - barrels";
-            errorWindow.SetActive(true);
+            string eText = "To access an item in a list, start with the list's name - barrels";
+            ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
         }
         else if (!text.StartsWith("barrels[")) {
-            errorText.text = "To access an item in a list, start with the list's name and then enter the index number in [ ] afterwards";
-            errorWindow.SetActive(true);
+            string eText = "To access an item in a list, start with the list's name and then enter the index number in [ ] afterwards";
+            ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
         }
         else if (text[8] != '0' && text[8] != '1' && text[8] != '2' && text[8] != '3') {
-            errorText.text = "The available index numbers in the list are 0, 1, 2 and 3";
-            errorWindow.SetActive(true);
+            string eText = "The available index numbers in the list are 0, 1, 2 and 3";
+            ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
         }
         else if (text[text.Length-1] != ']') {
-            errorText.text = "Access an element in the list like this: barrels[2]";
-            errorWindow.SetActive(true);
+            string eText = "Access an element in the list like this: barrels[2]";
+            ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
         }
         else {
             beep.Play();
@@ -53,8 +54,8 @@ public class RevealClue : MonoBehaviour
     }
 
     public void DisplayError() {
-        errorText.text = "The list name is 'barrels', so our foreach loop needs to start with foreach(_ in barrels)";
-        errorWindow.SetActive(true);
+        string eText = "The list name is 'barrels', so our foreach loop needs to start with foreach(_ in barrels)";
+        ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
     }
 
     public void ChangeScreen() {
@@ -69,7 +70,6 @@ public class RevealClue : MonoBehaviour
         button.SetActive(false);
         errorWindow.SetActive(false);
         character.increaseChallengeNumber();
-        // displayWindow.SetActive(false);
         Destroy(displayWindow, beep.clip.length);
         Destroy(screens[2], beep.clip.length);
         Vector3 pos = character.body.transform.position;
@@ -98,5 +98,7 @@ public class RevealClue : MonoBehaviour
 
     void Start() {
         currentField.onEndEdit.AddListener(delegate {OnStoppedEditing(currentField.text);});
+        beep = GameObject.Find("Beep").GetComponent<AudioSource>();
+        bomp = GameObject.Find("Bomp").GetComponent<AudioSource>();
     }
 }

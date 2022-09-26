@@ -64,11 +64,9 @@ public class PlayerMovementController : MonoBehaviour
     }
 
     public void PlayLeftStep() {
-        // steps[0].Play();
         left.Play();
     }
     public void PlayRightStep() {
-        // steps[1].Play();
         right.Play();
     }
 

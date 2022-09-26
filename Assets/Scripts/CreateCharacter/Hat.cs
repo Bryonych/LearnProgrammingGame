@@ -43,7 +43,7 @@ public class Hat {
 
     }
     public void addHatToCharacter(char person, string text) {
-        if (person == 'h') {}
+        if (person == 'h') {
             if (text == "\"cap\"") {
                 Attribute att = new Attribute(cap, controller[1], character, hat, "Hat");
                 att.createAttribute(false);
@@ -52,6 +52,7 @@ public class Hat {
                 Attribute att = new Attribute(topHat, controller[2], character, hat, "Hat");
                 att.createAttribute(false);
             }
+        }
         else if (person == 's') {
             if (text == "\"top hat\"") {
                 Attribute att = new Attribute(topHat, controller[0], character, hat, "Hat");
