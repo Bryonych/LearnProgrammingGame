@@ -30,8 +30,4 @@ public class CreateCharacter : MonoBehaviour
         DontDestroyOnLoad(character.bottoms.transform.parent);
     }
 
-    // public Character getCharacter() {
-    //     return character;
-    // }
-
 }

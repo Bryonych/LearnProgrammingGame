@@ -11,21 +11,16 @@ using TMPro;
 public class Hair {
 
     private GameObject hair;
-    private Sprite shortBlack;
-    private Sprite shortOrange;
-    private Sprite dreads;
-    private Sprite longGreen; 
-    private RuntimeAnimatorController[] controller;
+    private Sprite sprite;
+    private RuntimeAnimatorController controller;
+    private Sprite[] sprites;
+    private RuntimeAnimatorController[] controllers;
     private Character character;
 
     /// Constructs a Shoes object
-    public Hair(Sprite shortBlack, Sprite shortOrange, Sprite dreads, Sprite longGreen, 
-                RuntimeAnimatorController[] controller, Character character, GameObject hair) {
-        this.shortBlack = shortBlack;
-        this.shortOrange = shortOrange;
-        this.dreads = dreads;
-        this.longGreen = longGreen;
-        this.controller = controller;
+    public Hair(Sprite[] sprites, RuntimeAnimatorController[] controllers, Character character, GameObject hair) {
+        this.sprites = sprites;
+        this.controllers = controllers;
         this.character = character;
         this.hair = hair;
     }
@@ -39,7 +34,7 @@ public class Hair {
             else if (text == "\"long green\"" || text == "\"short black\"" || text == "\"dreads\"" 
                     || text == "\"short orange\"") {
 
-                addHairToCharacter(character.bodyShape, text);
+                addHairToCharacter(character.bodyShape, text, sprites, controllers);
                 beep.Play();
                 return true;
             }
@@ -51,43 +46,37 @@ public class Hair {
         return false;
     }
 
-    public void addHairToCharacter(char person, string text) {
+    public void addHairToCharacter(char person, string text, Sprite[] sprites, RuntimeAnimatorController[] controllers) {
+        Attribute att = null;
         if (person == 's') {
             if (text == "\"long green\"") {
-                Attribute att = new Attribute(longGreen, controller[0], character, hair, "Hair");
-                att.createAttribute(false);
+                att = new Attribute(sprites[3], controllers[0], character, hair, "Hair");
             }
             else if (text == "\"dreads\"") {
-                Attribute att = new Attribute(dreads, controller[1], character, hair, "Hair");
-                att.createAttribute(false);
+                att = new Attribute(sprites[2], controllers[1], character, hair, "Hair");
             }
             else if (text == "\"short black\"") {
-                Attribute att = new Attribute(shortBlack, controller[6], character, hair, "Hair");
-                att.createAttribute(false);
+                att = new Attribute(sprites[0], controllers[6], character, hair, "Hair");
             }
             else if (text == "\"short orange\"") {
-                Attribute att = new Attribute(shortOrange, controller[7], character, hair, "Hair");
-                att.createAttribute(false);
+                att = new Attribute(sprites[1], controllers[7], character, hair, "Hair");
             }
         }
         else if (person == 'h') {
             if (text == "\"short black\"") {
-                Attribute att = new Attribute(shortBlack, controller[2], character, hair, "Hair");
-                att.createAttribute(false);
+                att = new Attribute(sprites[0], controllers[2], character, hair, "Hair");
             }
             else if (text == "\"short orange\"") {
-                Attribute att = new Attribute(shortOrange, controller[3], character, hair, "Hair");
-                att.createAttribute(false);
+                att = new Attribute(sprites[1], controllers[3], character, hair, "Hair");
             }
-            else if (character.bodyShape == 'h' && text == "\"dreads\"") {
-                Attribute att = new Attribute(dreads, controller[4], character, hair, "Hair");
-                att.createAttribute(false);
+            else if (text == "\"dreads\"") {
+                att = new Attribute(sprites[2], controllers[4], character, hair, "Hair");
             }
-            else if (character.bodyShape == 'h' && text == "\"long green\"") {
-                Attribute att = new Attribute(longGreen, controller[5], character, hair, "Hair");
-                att.createAttribute(false);
+            else if (text == "\"long green\"") {
+                att = new Attribute(sprites[3], controllers[5], character, hair, "Hair");
             }
-        }               
+        }
+        if (att != null) { att.createAttribute(false); }               
     }
 
 }

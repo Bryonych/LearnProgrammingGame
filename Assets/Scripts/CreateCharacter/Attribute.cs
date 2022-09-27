@@ -30,4 +30,5 @@ public class Attribute {
         character.addPart(go);
         character.setController(name, controller);
     }
+
 }

@@ -10,22 +10,15 @@ using TMPro;
 /// <summary>
 public class Shoes {
 
-    private Sprite sBoots;
-    private Sprite hGreen; 
-    private Sprite sGreen;
-    private Sprite hBoots; 
-    private RuntimeAnimatorController[] controller;
+    private Sprite[] sprites;
+    private RuntimeAnimatorController[] controllers;
     private Character character;
     private GameObject footwear;
 
     /// Constructs a Shoes object
-    public Shoes(Sprite sBoots, Sprite hGreen, Sprite sGreen, Sprite hBoots, 
-                RuntimeAnimatorController[] controller, Character character, GameObject footwear) {
-        this.sBoots = sBoots;
-        this.hGreen = hGreen;
-        this.sGreen = sGreen;
-        this.hBoots = hBoots;
-        this.controller = controller;
+    public Shoes(Sprite[] sprites, RuntimeAnimatorController[] controllers, Character character, GameObject footwear) {
+        this.sprites = sprites;
+        this.controllers = controllers;
         this.character = character;
         this.footwear = footwear;
     }
@@ -50,26 +43,24 @@ public class Shoes {
     // Adds the relevant sprites and animator controller based on the body type and the shoes
     // selected.
     public void AddShoesToCharacter(char person, char type) {
-            if (person == 's') {
-                if (type == 's') {
-                    Attribute att = new Attribute(sGreen, controller[0], character, footwear, "Shoes");
-                    att.createAttribute(false);
-                }
-                else if (type == 'b') {
-                    Attribute att = new Attribute(sBoots, controller[1], character, footwear, "Shoes");
-                    att.createAttribute(false);
-                }
+        Attribute att = null;
+        if (person == 's') {
+            if (type == 's') {
+                att = new Attribute(sprites[1], controllers[0], character, footwear, "Shoes");
             }
-            else if (person == 'h') {
-                if (type == 's') {
-                    Attribute att = new Attribute(hGreen, controller[2], character, footwear, "Shoes");
-                    att.createAttribute(false);
-                }
-                else if (type == 'b') {
-                    Attribute att = new Attribute(hBoots, controller[3], character, footwear, "Shoes");
-                    att.createAttribute(false);
-                }
+            else if (type == 'b') {
+                att = new Attribute(sprites[0], controllers[1], character, footwear, "Shoes");
             }
+        }
+        else if (person == 'h') {
+            if (type == 's') {
+                att = new Attribute(sprites[3], controllers[2], character, footwear, "Shoes");
+            }
+            else if (type == 'b') {
+                att = new Attribute(sprites[2], controllers[3], character, footwear, "Shoes");
+            }
+        }
+        if (att != null) { att.createAttribute(false); }
     }
 
 }

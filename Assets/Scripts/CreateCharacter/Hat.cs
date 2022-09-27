@@ -10,17 +10,15 @@ using TMPro;
 /// <summary>
 public class Hat {
 
-    public Sprite cap;
-    public Sprite topHat; 
-    private RuntimeAnimatorController[] controller;
+    private Sprite[] sprites;
+    private RuntimeAnimatorController[] controllers;
     private Character character;
     private GameObject hat;
 
     /// Constructs a Hat object
-    public Hat(Sprite cap, Sprite topHat, RuntimeAnimatorController[] controller, Character character, GameObject hat) {
-        this.cap = cap;
-        this.topHat = topHat;
-        this.controller = controller;
+    public Hat(Sprite[] sprites, RuntimeAnimatorController[] controllers, Character character, GameObject hat) {
+        this.sprites = sprites;
+        this.controllers = controllers;
         this.character = character;
         this.hat = hat;
     }
@@ -40,29 +38,27 @@ public class Hat {
             ErrorHandler eh = new ErrorHandler(bomp, "Inputs are either \"cap\" or \"top hat\"", errorWindow, errorText);
             return false;
         }
-
     }
+
     public void addHatToCharacter(char person, string text) {
+        Attribute att = null;
         if (person == 'h') {
             if (text == "\"cap\"") {
-                Attribute att = new Attribute(cap, controller[1], character, hat, "Hat");
-                att.createAttribute(false);
+                att = new Attribute(sprites[0], controllers[1], character, hat, "Hat");
             }
             else if (text == "\"top hat\"") {
-                Attribute att = new Attribute(topHat, controller[2], character, hat, "Hat");
-                att.createAttribute(false);
+                att = new Attribute(sprites[1], controllers[2], character, hat, "Hat");
             }
         }
         else if (person == 's') {
             if (text == "\"top hat\"") {
-                Attribute att = new Attribute(topHat, controller[0], character, hat, "Hat");
-                att.createAttribute(false);
+                att = new Attribute(sprites[1], controllers[0], character, hat, "Hat");
             }
             else if (text == "\"cap\"") {
-                Attribute att = new Attribute(cap, controller[3], character, hat, "Hat");
-                att.createAttribute(false);
+                att = new Attribute(sprites[0], controllers[3], character, hat, "Hat");
             }
         }
+        if (att != null) { att.createAttribute(false); }
     }
 
 }

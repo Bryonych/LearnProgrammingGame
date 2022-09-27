@@ -10,22 +10,15 @@ using TMPro;
 /// <summary>
 public class Top {
 
-    private Sprite sBusiness;
-    private Sprite hBusiness;
-    private Sprite sTShirt;
-    private Sprite hTShirt;
-    private RuntimeAnimatorController[] controller;
+    private Sprite[] sprites;
+    private RuntimeAnimatorController[] controllers;
     private Character character;
     private GameObject top;
 
     /// Constructs a Shoes object
-    public Top(Sprite sBusiness, Sprite hBusiness, Sprite sTShirt, Sprite hTShirt, 
-                RuntimeAnimatorController[] controller, Character character, GameObject top) {
-        this.sBusiness = sBusiness;
-        this.hBusiness = hBusiness;
-        this.sTShirt = sTShirt;
-        this.hTShirt = hTShirt;
-        this.controller = controller;
+    public Top(Sprite[] sprites, RuntimeAnimatorController[] controllers, Character character, GameObject top) {
+        this.sprites = sprites;
+        this.controllers = controllers;
         this.character = character;
         this.top = top;
     }
@@ -44,26 +37,24 @@ public class Top {
     }
 
     public void addTopToCharacter(char person, string text) {
+        Attribute att = null;
         if (person == 's') {
             if (text == "false") {
-                Attribute att = new Attribute(sBusiness, controller[0], character, top, "Top");
-                att.createAttribute(false);
+                att = new Attribute(sprites[0], controllers[0], character, top, "Top");
             }
-            else if (character.bodyShape == 's' && text == "true") {
-                Attribute att = new Attribute(sTShirt, controller[1], character, top, "Top");
-                att.createAttribute(false);
+            else if (text == "true") {
+                att = new Attribute(sprites[1], controllers[1], character, top, "Top");
             }
         }
         else if (person == 'h') {
-            if (character.bodyShape == 'h' && text == "false") {
-                Attribute att = new Attribute(hBusiness, controller[2], character, top, "Top");
-                att.createAttribute(false);
+            if (text == "false") {
+                att = new Attribute(sprites[2], controllers[2], character, top, "Top");
             }
-            else if (character.bodyShape == 'h' && text == "true") {
-                Attribute att = new Attribute(hTShirt, controller[3], character, top, "Top");
-                att.createAttribute(false);
+            else if (text == "true") {
+                att = new Attribute(sprites[3], controllers[3], character, top, "Top");
             }
         }
+        if (att != null) { att.createAttribute(false); }
     }
 
 }

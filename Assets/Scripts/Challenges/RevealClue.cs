@@ -66,7 +66,7 @@ public class RevealClue : MonoBehaviour
     }
 
     public void ShowClue() {
-        beep.Play();
+        if (beep != null) { beep.Play(); }
         button.SetActive(false);
         errorWindow.SetActive(false);
         character.increaseChallengeNumber();

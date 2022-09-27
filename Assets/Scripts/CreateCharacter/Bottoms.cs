@@ -40,29 +40,27 @@ public class Bottoms : Attribute {
     }
 
     public void addBottomsToCharacter(char person, string text) {
+        Attribute att = null;
         if (person == 's') {
             if (text == "false") {
-                Attribute att = new Attribute(sTrousers, controllers[0], character, bottoms, "Bottoms");
-                att.createAttribute(false);
+                att = new Attribute(sTrousers, controllers[0], character, bottoms, "Bottoms");
             }
             else if (text == "true") {
-                Attribute att = new Attribute(sShorts, controllers[1], character, bottoms, "Bottoms");
-                att.createAttribute(false);
+                att = new Attribute(sShorts, controllers[1], character, bottoms, "Bottoms");
             }
         }
         else if (person == 'h') {
             if (text == "false") {
-                Attribute att = new Attribute(hTrousers, controllers[2], character, bottoms, "Bottoms");
-                att.createAttribute(false);
+                att = new Attribute(hTrousers, controllers[2], character, bottoms, "Bottoms");
             }
             else if (text == "true") {
-                Attribute att = new Attribute(hShorts, controllers[3], character, bottoms, "Bottoms");
-                att.createAttribute(false);
+                att = new Attribute(hShorts, controllers[3], character, bottoms, "Bottoms");
             }
         }
         else {
             return;
         }
+        if (att != null) { att.createAttribute(false); }
     }
 
 }

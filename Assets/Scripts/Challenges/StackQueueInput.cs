@@ -10,6 +10,7 @@ public class StackQueueInput : MonoBehaviour
     public TMP_InputField currentField;
     public GameObject[] roadBlocks;
     public GameObject[] boxes;
+    public GameObject[] destroy;
     public GameObject errorWindow;
     public TextMeshProUGUI errorText;
     public Character character;
@@ -20,21 +21,15 @@ public class StackQueueInput : MonoBehaviour
     public void OnStoppedEditing(string text) {
         errorWindow.SetActive(false);
         if (currentField.name == "First" && text == "0123") {
+            destroy[1].SetActive(false);
             beep.Play();
-            Destroy(queue, beep.clip.length);
+            StartCoroutine(Remove(roadBlocks, queue, destroy[0]));
             stack.SetActive(true);
-            roadBlocks[0].GetComponent<Animator>().Play("RoadBlockAnim1");
-            // roadBlocks[1].GetComponent<Animator>().Play("RoadBlockAnim2");
-            // roadBlocks[2].GetComponent<Animator>().Play("RoadBlockAnim3");
-            // roadBlocks[3].GetComponent<Animator>().Play("RoadBlockAnim4");
-            roadBlocks[4].SetActive(false);
-            roadBlocks[5].SetActive(false);
         }
         else if (currentField.name == "Second" && text == "3210") {
             beep.Play();
-            boxes[0].GetComponent<Animator>().Play("BoxAnim");
-            boxes[4].SetActive(false);
             CloseChallenge();
+            StartCoroutine(Remove(boxes, displayWindow, destroy[2]));
         }
         else {
             string eText;
@@ -48,13 +43,21 @@ public class StackQueueInput : MonoBehaviour
         }
     }
 
+    public IEnumerator Remove(GameObject[] objects, GameObject screen, GameObject obj) {
+        foreach(GameObject go in objects) {
+            go.SetActive(false);
+            yield return new WaitForSeconds(2);
+        }
+        Destroy(obj);
+        Destroy(screen);
+    }
+
     public void CloseChallenge() {           
         foreach (GameObject go in character.getParts()) {
             PlayerMovementController pmc = go.GetComponent(typeof(PlayerMovementController)) as PlayerMovementController;
             pmc.movementSpeed = 2.5f;
         }
         character.increaseChallengeNumber();
-        Destroy(displayWindow, beep.clip.length);
     }
 
 

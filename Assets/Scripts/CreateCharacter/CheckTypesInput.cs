@@ -12,6 +12,8 @@ public class CheckTypesInput : MonoBehaviour
     public GameObject displayWindow;
     public GameObject[] nextWindow;
     public TextMeshProUGUI errorText;
+    AudioSource beep;
+    AudioSource bomp;
     
 
     public void OnStoppedEditing(string text) {
@@ -19,53 +21,50 @@ public class CheckTypesInput : MonoBehaviour
         if (text.Length > 0) {
             if (currentField.name == "StringInputField" && text.Length > 1) {
                 if (text[0] != '\"' || text[text.Length-1] != '\"') {
-                    errorText.text = "Strings must be in quotation marks";
-                    errorWindow.SetActive(true);
+                    ErrorHandler eh = new ErrorHandler(bomp, "Strings must be in quotation marks", errorWindow, errorText);
                 }
                 else {
                     character.setName(text.Substring(1,text.Length-2));
-                    ChangeWindow();
+                    beep.Play();
+                    Invoke("ChangeWindow", beep.clip.length);
                 }
             }
             else if (currentField.name == "IntInputField") {
                 int a;
                 if (!int.TryParse(text, out a)) {
-                    errorText.text = "An integer is a number with no decimal place";
-                    errorWindow.SetActive(true);
+                    ErrorHandler eh = new ErrorHandler(bomp, "An integer is a number with no decimal place", errorWindow, errorText);
                 }
                 else if (text == "007") {
-                    errorText.text = "Sorry, we have an agent with that number already";
-                    errorWindow.SetActive(true);
+                    ErrorHandler eh = new ErrorHandler(bomp, "Sorry, we have an agent with that number already", errorWindow, errorText);
                 }
                 else {
                     character.setAgentNumber(text);
-                    ChangeWindow();
+                    beep.Play();
+                    Invoke("ChangeWindow", beep.clip.length);
                 }
             }
             else if (currentField.name == "FloatInputField") {
                 float a;
                 if (!float.TryParse(text, out a)) {
-                    errorText.text = "A float is a number with a decimal place and up to 7 digits.";
-                    errorWindow.SetActive(true);
+                    ErrorHandler eh = new ErrorHandler(bomp, "A float is a number with a decimal place and up to 7 digits.", errorWindow, errorText);
                 }
                 else if (text.Length > 7) {
-                    errorText.text = "A number with more than 7 digits is a double, rather than a float.";
-                    errorWindow.SetActive(true);
+                    ErrorHandler eh = new ErrorHandler(bomp, "A number with more than 7 digits is a double, rather than a float.", errorWindow, errorText);
                 }
                 else if (!text.Contains('.')) {
-                    errorText.text = "A float must have a decimal place." 
+                    string eText = "A float must have a decimal place." 
                             +" If a float is a whole number, its decimal is zero. eg. 1.0";
-                    errorWindow.SetActive(true);
+                    ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
                 }
                 else {
-                    ChangeWindow();
+                    beep.Play();
+                    Invoke("ChangeWindow", beep.clip.length);
                 }
             }
 
             else if (currentField.name == "BooleanInputField") {
                 if (text != "true" && text != "false") {
-                    errorText.text = "A boolean can be either true or false";
-                    errorWindow.SetActive(true);
+                    ErrorHandler eh = new ErrorHandler(bomp, "A boolean can be either true or false", errorWindow, errorText);
                 }
                 else {
                     if (text == "true") {
@@ -74,7 +73,8 @@ public class CheckTypesInput : MonoBehaviour
                         nextWindow[1].SetActive(true);
                     }
                     else {
-                        ChangeWindow();
+                        beep.Play();
+                        Invoke("ChangeWindow", beep.clip.length);
                     }
                 }
             }
@@ -89,6 +89,7 @@ public class CheckTypesInput : MonoBehaviour
 
     void Start() {
         currentField.onEndEdit.AddListener(delegate {OnStoppedEditing(currentField.text);});
-
+        beep = GameObject.Find("Beep").GetComponent<AudioSource>();
+        bomp = GameObject.Find("Bomp").GetComponent<AudioSource>();
     }
 }

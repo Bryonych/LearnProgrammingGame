@@ -4026,7 +4026,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 818881094}
+    m_TransformParent: {fileID: 3164247130657151111}
     m_Modifications:
     - target: {fileID: 1584087425937744153, guid: 775f3ac26a5b3f94aa9a2611b9f8c515, type: 3}
       propertyPath: m_Name
@@ -4042,7 +4042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1584087425937744154, guid: 775f3ac26a5b3f94aa9a2611b9f8c515, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1584087425937744154, guid: 775f3ac26a5b3f94aa9a2611b9f8c515, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4098,11 +4098,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1584087425937744154, guid: 775f3ac26a5b3f94aa9a2611b9f8c515, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -36.192245
       objectReference: {fileID: 0}
     - target: {fileID: 1584087425937744154, guid: 775f3ac26a5b3f94aa9a2611b9f8c515, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 72.77783
       objectReference: {fileID: 0}
     - target: {fileID: 1584087425937744154, guid: 775f3ac26a5b3f94aa9a2611b9f8c515, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7755,7 +7755,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -90.9417}
+  m_AnchoredPosition: {x: 0, y: -360.3}
   m_SizeDelta: {x: -19.695599, y: 153.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202918866
@@ -8378,7 +8378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -199.78374}
+  m_AnchoredPosition: {x: 0, y: 46.6}
   m_SizeDelta: {x: 0, y: 84.2845}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &223020863
@@ -8922,13 +8922,14 @@ MonoBehaviour:
   - {fileID: 1058942756}
   - {fileID: 629436511}
   - {fileID: 1227327700}
-  - {fileID: 1374604812}
-  - {fileID: 2019314560}
   boxes:
   - {fileID: 1798558188}
   - {fileID: 1840468621}
   - {fileID: 1245339000}
   - {fileID: 345481622}
+  destroy:
+  - {fileID: 1374604812}
+  - {fileID: 2019314560}
   - {fileID: 369047057}
   errorWindow: {fileID: 1857657458}
   errorText: {fileID: 424322738}
@@ -10952,7 +10953,7 @@ GameObject:
   - component: {fileID: 345481624}
   - component: {fileID: 345481625}
   m_Layer: 0
-  m_Name: cardboardbox_3_01
+  m_Name: Box2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10971,7 +10972,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1158061542}
-  m_RootOrder: 289
+  m_RootOrder: 285
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &345481624
 SpriteRenderer:
@@ -11685,7 +11686,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1158061542}
-  m_RootOrder: 287
+  m_RootOrder: 283
   m_LocalEulerAnglesHint: {x: -1.349, y: -6.16, z: 100.457}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12972,7 +12973,7 @@ GameObject:
   - component: {fileID: 413603945}
   - component: {fileID: 413603946}
   m_Layer: 0
-  m_Name: road_barrier_2_01
+  m_Name: RoadBlockAnim1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12990,8 +12991,8 @@ Transform:
   m_LocalScale: {x: 3.10205, y: 3.1477416, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1158061542}
-  m_RootOrder: 281
+  m_Father: {fileID: 616731326}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &413603943
 SpriteRenderer:
@@ -13079,9 +13080,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413603941}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6052f405226c5ff4a8b1ac8d3acd4a14, type: 2}
+  m_Controller: {fileID: 9100000, guid: 177d43f0435882e4f854398cab18052b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -13100,7 +13101,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 413603941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8306ee8a3110e534dba0340bdbaf5f62, type: 3}
+  m_Script: {fileID: 11500000, guid: 162c9b9b011f3b7409cfdd05b8243c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &417983148
@@ -19859,6 +19860,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608026729}
   m_CullTransparentMesh: 1
+--- !u!1 &616731325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 616731326}
+  - component: {fileID: 616731327}
+  m_Layer: 0
+  m_Name: RoadBarriers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &616731326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616731325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 413603942}
+  - {fileID: 1058942757}
+  - {fileID: 629436512}
+  - {fileID: 1227327701}
+  m_Father: {fileID: 1158061542}
+  m_RootOrder: 286
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &616731327
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616731325}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 177d43f0435882e4f854398cab18052b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &619273555
 GameObject:
   m_ObjectHideFlags: 0
@@ -20292,7 +20349,7 @@ GameObject:
   - component: {fileID: 629436514}
   - component: {fileID: 629436515}
   m_Layer: 0
-  m_Name: road_barrier_2_01 (2)
+  m_Name: RoadBlockAnim3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20310,8 +20367,8 @@ Transform:
   m_LocalScale: {x: 3.396363, y: 3.0792775, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1158061542}
-  m_RootOrder: 283
+  m_Father: {fileID: 616731326}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &629436513
 SpriteRenderer:
@@ -20399,9 +20456,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629436511}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6052f405226c5ff4a8b1ac8d3acd4a14, type: 2}
+  m_Controller: {fileID: 9100000, guid: 177d43f0435882e4f854398cab18052b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -22341,7 +22398,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 818881094}
+    m_TransformParent: {fileID: 3164247130657151111}
     m_Modifications:
     - target: {fileID: 8513059835385738298, guid: 44e2765931f24ec44bdef86e11ee4bcb, type: 3}
       propertyPath: m_Pivot.x
@@ -22353,7 +22410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8513059835385738298, guid: 44e2765931f24ec44bdef86e11ee4bcb, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8513059835385738298, guid: 44e2765931f24ec44bdef86e11ee4bcb, type: 3}
       propertyPath: m_AnchorMax.x
@@ -22397,23 +22454,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8513059835385738298, guid: 44e2765931f24ec44bdef86e11ee4bcb, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8513059835385738298, guid: 44e2765931f24ec44bdef86e11ee4bcb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8513059835385738298, guid: 44e2765931f24ec44bdef86e11ee4bcb, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8513059835385738298, guid: 44e2765931f24ec44bdef86e11ee4bcb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -36.192245
       objectReference: {fileID: 0}
     - target: {fileID: 8513059835385738298, guid: 44e2765931f24ec44bdef86e11ee4bcb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 72.77783
       objectReference: {fileID: 0}
     - target: {fileID: 8513059835385738298, guid: 44e2765931f24ec44bdef86e11ee4bcb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -26643,8 +26700,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1824298901}
-  - {fileID: 129944505}
-  - {fileID: 701910684}
   m_Father: {fileID: 980008736650832401}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -30514,7 +30569,7 @@ MonoBehaviour:
 
     It reads: I have blocked
     your way with a queue of road blocks and a stack of boxes. The only way you can
-    get through, is if you can work out which one to remove first.'
+    get through, is if you can work out the order in which to remove them.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -35556,7 +35611,7 @@ GameObject:
   - component: {fileID: 1058942759}
   - component: {fileID: 1058942760}
   m_Layer: 0
-  m_Name: road_barrier_2_01 (1)
+  m_Name: RoadBlockAnim2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35574,8 +35629,8 @@ Transform:
   m_LocalScale: {x: 3.396363, y: 3.0792775, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1158061542}
-  m_RootOrder: 282
+  m_Father: {fileID: 616731326}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1058942758
 SpriteRenderer:
@@ -35663,9 +35718,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058942756}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6052f405226c5ff4a8b1ac8d3acd4a14, type: 2}
+  m_Controller: {fileID: 9100000, guid: 177d43f0435882e4f854398cab18052b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -39291,15 +39346,12 @@ Transform:
   - {fileID: 417983151}
   - {fileID: 1798558189}
   - {fileID: 1840468622}
-  - {fileID: 413603942}
-  - {fileID: 1058942757}
-  - {fileID: 629436512}
-  - {fileID: 1227327701}
   - {fileID: 1374604813}
   - {fileID: 2019314561}
   - {fileID: 369047058}
   - {fileID: 1245339001}
   - {fileID: 345481623}
+  - {fileID: 616731326}
   m_Father: {fileID: 1329476677}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41567,7 +41619,7 @@ GameObject:
   - component: {fileID: 1227327703}
   - component: {fileID: 1227327704}
   m_Layer: 0
-  m_Name: road_barrier_2_01 (3)
+  m_Name: RoadBlockAnim4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41585,8 +41637,8 @@ Transform:
   m_LocalScale: {x: 3.396363, y: 3.0792775, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1158061542}
-  m_RootOrder: 284
+  m_Father: {fileID: 616731326}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1227327702
 SpriteRenderer:
@@ -41674,9 +41726,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227327700}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6052f405226c5ff4a8b1ac8d3acd4a14, type: 2}
+  m_Controller: {fileID: 9100000, guid: 177d43f0435882e4f854398cab18052b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -42539,7 +42591,7 @@ GameObject:
   - component: {fileID: 1245339002}
   - component: {fileID: 1245339003}
   m_Layer: 0
-  m_Name: cardboardbox_1_02
+  m_Name: Box1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42558,7 +42610,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1158061542}
-  m_RootOrder: 288
+  m_RootOrder: 284
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1245339002
 SpriteRenderer:
@@ -43371,7 +43423,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
+  m_fontSize: 17.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -45959,7 +46011,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1158061542}
-  m_RootOrder: 285
+  m_RootOrder: 281
   m_LocalEulerAnglesHint: {x: 4.29, y: 7.614, z: -28.05}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -53399,7 +53451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -115.48454}
+  m_AnchoredPosition: {x: 0, y: 116.2}
   m_SizeDelta: {x: 0, y: -80.5844}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1622048564
@@ -59953,7 +60005,7 @@ GameObject:
   - component: {fileID: 1798558190}
   - component: {fileID: 1798558192}
   m_Layer: 0
-  m_Name: cardboardbox_9_01
+  m_Name: Box3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60547,7 +60599,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.35
+  m_fontSize: 27.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -61341,7 +61393,7 @@ GameObject:
   - component: {fileID: 1840468623}
   - component: {fileID: 1840468625}
   m_Layer: 0
-  m_Name: cardboardbox_9_02
+  m_Name: Box4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64167,12 +64219,14 @@ MonoBehaviour:
   - {fileID: 1058942756}
   - {fileID: 629436511}
   - {fileID: 1227327700}
-  - {fileID: 1374604812}
   boxes:
-  - {fileID: 1798558188}
-  - {fileID: 1840468621}
   - {fileID: 1245339000}
   - {fileID: 345481622}
+  - {fileID: 1798558188}
+  - {fileID: 1840468621}
+  destroy:
+  - {fileID: 1374604812}
+  - {fileID: 2019314560}
   - {fileID: 369047057}
   errorWindow: {fileID: 1857657458}
   errorText: {fileID: 424322738}
@@ -66928,7 +66982,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1158061542}
-  m_RootOrder: 286
+  m_RootOrder: 282
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2019314562
 SpriteRenderer:
@@ -67819,7 +67873,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -90.9417}
+  m_AnchoredPosition: {x: 0, y: -355.99994}
   m_SizeDelta: {x: -19.6956, y: 153.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2054843132
@@ -70929,6 +70983,8 @@ RectTransform:
   - {fileID: 2054843131}
   - {fileID: 202918865}
   - {fileID: 1775994994}
+  - {fileID: 129944505}
+  - {fileID: 701910684}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
