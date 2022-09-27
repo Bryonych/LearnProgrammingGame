@@ -20,7 +20,7 @@ public class ErrorHandler {
     }
 
     public void handleError() {
-        bomp.Play();
+        if (bomp != null) { bomp.Play(); }
         errorText.text = text;
         errorWindow.SetActive(true);
     }

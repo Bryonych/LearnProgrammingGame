@@ -12,7 +12,6 @@ public class ConditionalDropDown : MonoBehaviour
     public TextMeshProUGUI displaySelected;
     public TMP_Dropdown selected;
     public GameObject button;
-    private int[] correctOrder = {2, 0, 3, 1, 5, 4};
     private int codeLineCount = 0;
     List<TMP_Dropdown.OptionData> menuOptions;
     AudioSource beep;
@@ -25,17 +24,10 @@ public class ConditionalDropDown : MonoBehaviour
     }
     
     public void OnSelect() {
+        CheckChallengeLogic ccl = new CheckChallengeLogic(errorPanel, errorText, bomp);
         errorPanel.SetActive(false);
         int index = selected.value;
-        print(index);
-        if (index == correctOrder[codeLineCount]) {
-            displaySelected.text += menuOptions[index].text + "\n";
-            codeLineCount += 1;
-        }
-        else {
-            string eText = "The order should be: if(statement){ instruction } else { instruction }";
-            ErrorHandler eh = new ErrorHandler(bomp, eText, errorPanel, errorText);
-        }
+        codeLineCount = ccl.CheckConditionalsOrder(index, codeLineCount, menuOptions, displaySelected);
         if (codeLineCount == 6) {
             beep.Play();
             displaySelected.text = "The attacker went North!";

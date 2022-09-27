@@ -35,7 +35,7 @@ public class Hair {
                     || text == "\"short orange\"") {
 
                 addHairToCharacter(character.bodyShape, text, sprites, controllers);
-                beep.Play();
+                if (beep != null) { beep.Play(); }
                 return true;
             }
             else {

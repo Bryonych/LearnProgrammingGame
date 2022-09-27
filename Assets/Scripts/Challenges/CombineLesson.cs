@@ -11,21 +11,14 @@ public class CombineLesson : MonoBehaviour
     public GameObject button;
     public GameObject displayWindow;
     public Character character;
-    private string[] codeOrder = { " for (Road road : roadList) {", "    if (road.contains(document) {",
-                                    "       display(road.getDirection());", "    }", " }"};
     private int order = 0;
     AudioSource beep;
     AudioSource bomp;
 
     public void CheckSelection(int selected) {
-        if (selected == order) {
-            displayBox[order].text = codeOrder[order];
-            order += 1;
-        }
-        else {
-            string text = "The order should be:\n for(Type _ : _) { if(condition) { //do something } }";
-            ErrorHandler eh = new ErrorHandler(bomp, text, errorWindow, errorText);
-        }
+        errorWindow.SetActive(false);
+        CheckChallengeLogic ccl = new CheckChallengeLogic(errorWindow, errorText, bomp);
+        order = ccl.CheckOrderCombined(selected, order, displayBox);
         if (order == 5) {
             foreach (TextMeshProUGUI t in displayBox) {
                 t.text = "";

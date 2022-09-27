@@ -31,7 +31,7 @@ public class Hat {
         }
         else if (text == "\"cap\"" || text == "\"top hat\"") {
             addHatToCharacter(character.bodyShape, text);
-            beep.Play();
+            if (beep != null) { beep.Play(); }
             return true;
         }
         else {

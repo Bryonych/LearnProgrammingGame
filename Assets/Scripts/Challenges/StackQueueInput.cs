@@ -20,26 +20,17 @@ public class StackQueueInput : MonoBehaviour
 
     public void OnStoppedEditing(string text) {
         errorWindow.SetActive(false);
-        if (currentField.name == "First" && text == "0123") {
+        CheckChallengeLogic ccl = new CheckChallengeLogic(errorWindow, errorText, bomp);
+        if (currentField.name == "First" && ccl.CheckStackAndQueueOrder(currentField.name, text)) {
             destroy[1].SetActive(false);
-            beep.Play();
+            if (beep != null) { beep.Play(); }
             StartCoroutine(Remove(roadBlocks, queue, destroy[0]));
             stack.SetActive(true);
         }
-        else if (currentField.name == "Second" && text == "3210") {
-            beep.Play();
+        else if (currentField.name == "Second" && ccl.CheckStackAndQueueOrder(currentField.name, text)) {
+            if (beep != null) { beep.Play(); }
             CloseChallenge();
             StartCoroutine(Remove(boxes, displayWindow, destroy[2]));
-        }
-        else {
-            string eText;
-            if (currentField.name == "First") {
-                eText = "In a queue, the item added first is the first to be removed.";
-            }
-            else {
-                eText = "In a stack, the item added last is the first to be removed.";
-            }
-            ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
         }
     }
 

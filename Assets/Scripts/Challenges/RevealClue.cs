@@ -19,37 +19,16 @@ public class RevealClue : MonoBehaviour
     AudioSource bomp;
     
     public void OnStoppedEditing(string text) {
-
+        CheckChallengeLogic ccl = new CheckChallengeLogic(errorWindow, errorText, bomp);
         errorWindow.SetActive(false);
         if (text.Length > 0) {
             if (currentField.name == "ListAccessInputField") {
-                handleListAccessEntry(text);
+                if (ccl.HandleListAccessEntry(text)) {
+                    if (beep != null) { beep.Play(); }
+                    Destroy(displayWindow, beep.clip.length);
+                    nextWindow.SetActive(true);
+                }
             }
-        }
-    }
-
-    public void handleListAccessEntry(string text) {
-        if (!text.StartsWith("barrels")) {
-            string eText = "To access an item in a list, start with the list's name - barrels";
-            ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
-        }
-        else if (!text.StartsWith("barrels[")) {
-            string eText = "To access an item in a list, start with the list's name and then enter the index number in [ ] afterwards";
-            ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
-        }
-        else if (text[8] != '0' && text[8] != '1' && text[8] != '2' && text[8] != '3') {
-            string eText = "The available index numbers in the list are 0, 1, 2 and 3";
-            ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
-        }
-        else if (text[text.Length-1] != ']') {
-            string eText = "Access an element in the list like this: barrels[2]";
-            ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
-        }
-        else {
-            beep.Play();
-            // displayWindow.SetActive(false);
-            Destroy(displayWindow, beep.clip.length);
-            nextWindow.SetActive(true);
         }
     }
 

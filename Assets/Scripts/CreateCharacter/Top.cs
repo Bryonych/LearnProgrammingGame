@@ -27,7 +27,7 @@ public class Top {
     public bool checkLogicTop(string text, GameObject errorWindow, TextMeshProUGUI errorText, AudioSource beep, AudioSource bomp) {
         if (text == "true" || text == "false") {
             addTopToCharacter(character.bodyShape, text);
-            beep.Play();
+            if (beep != null) { beep.Play(); }
             return true;
         }
         else {

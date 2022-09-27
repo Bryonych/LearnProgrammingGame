@@ -22,7 +22,7 @@ public class Bottoms : Attribute {
     public bool checkLogicBottoms(string text, GameObject errorWindow, TextMeshProUGUI errorText, AudioSource beep, AudioSource bomp) {
         if (text == "true" || text == "false") {
             addBottomsToCharacter(character.bodyShape, text);
-            beep.Play();
+            if (beep != null) { beep.Play(); }
             return true;
         }
         else {

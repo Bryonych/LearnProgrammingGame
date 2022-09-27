@@ -6,7 +6,8 @@
         "UnityEditor.TestRunner",
         "Unity.TextMeshPro",
         "CreateCharacter",
-        "Character"
+        "Character",
+        "Challenges"
     ],
     "includePlatforms": [
         "Editor"

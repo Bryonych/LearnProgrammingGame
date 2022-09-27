@@ -31,7 +31,7 @@ public class Shoes {
         }
         else if (text == "\'s\'" || text == "\'b\'") {
             AddShoesToCharacter(character.bodyShape, text[1]);
-            beep.Play();
+            if (beep != null) { beep.Play(); }
             return true;
         }
         else {

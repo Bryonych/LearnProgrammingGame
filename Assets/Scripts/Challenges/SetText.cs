@@ -14,23 +14,23 @@ public class SetText : MonoBehaviour {
     void Update() {
         if (page == 0) {
             displayText.SetText("Welcome to the city Agent " + character.getAgentNumber() + ".\n"
-            + "We have received intelligence that there are clues to the attacker's whereabouts inside an array of barrels.\n\n"
-            + "A array is an ordered collection of data, with the same data type.\n");
+            + "We have received intelligence that there are clues to the attacker's whereabouts inside a list of barrels.\n\n"
+            + "A list is an ordered collection of data, with the same data type.\n");
         }
         else if (page == 1) {
-            displayText.SetText("An example of an array of integers is:\n"
-            + "int[ ] numbers = [1, 2, 8, 17];\n"
-            + "\nThe \'int[ ]\' part means it is an array of integers and \'numbers\' is the name of the array."
-            + "The items after the \'=\' sign in the square brackets are the integers that have been assigned to the array.");
+            displayText.SetText("An example of a list of integers is:\n"
+            + "List<Integer> numbers = List.of(1, 2, 8, 17);\n"
+            + "\nThe \'List<Integer>\' part means it is a list of integers and \'numbers\' is the name of the list."
+            + "The items in the brackets are the integers that have been assigned to the list.");
         }
         else if (page == 2) {
-            displayText.SetText("You can access an item in an array by using its index number. In programming, we count from zero instead of one.\n\n"
-            + "So in the array of integers\n int[ ] numbers = [1, 2, 8, 17];\n We can access the number 1 like this: "
-            + "numbers[0] and the number 8 like this: numbers[2]");
+            displayText.SetText("You can access an item in a list by using its index number. In programming, we count from zero instead of one.\n\n"
+            + "So in the list of integers\n List<Integer> numbers = List.of(1, 2, 8, 17);\n We can access the number 1 like this: "
+            + "numbers.get(0) and the number 8 like this: numbers.get(2)\nThe 'get' method in the List class returns the element at the provided index.");
         }
         else if (page == 3) {
-            displayText.SetText("We have reason to believe there is an array of barrels in your current vacinity. To access the clue, select a "
-            + "barrel from the array using its index number as described. The name of the array is 'barrels'.");
+            displayText.SetText("We have reason to believe there is a list of barrels in your current vacinity. To access the clue, select a "
+            + "barrel from the list using its index number and the get method as described. The name of the list is 'barrels'.");
             button.SetActive(false);
             inputField.SetActive(true);
         }
