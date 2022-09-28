@@ -22,6 +22,9 @@ public class ShowChallenge : MonoBehaviour
 
         if (player.gameObject.tag == "Player") {
             if (character.getChallengeNumber() == challengeNumber) {
+                if (character.getChallengeNumber() == 4) {
+                    GameObject.Find("ScarySound").GetComponent<AudioSource>().Play();
+                }
                 canvas.SetActive(true);
                 firstPanel.SetActive(true);
                 foreach (GameObject go in character.getParts()) {

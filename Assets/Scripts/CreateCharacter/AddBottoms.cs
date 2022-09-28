@@ -38,6 +38,7 @@ public class AddBottoms : MonoBehaviour
     void Start()
     {
         currentField.onEndEdit.AddListener(delegate {OnStoppedEditing(currentField.text);});
+        currentField.Select();
         beep = GameObject.Find("Beep").GetComponent<AudioSource>();
         bomp = GameObject.Find("Bomp").GetComponent<AudioSource>();
     }

@@ -20,7 +20,7 @@ public class TypeWriterEffect : MonoBehaviour
     }
 
     IEnumerator ShowText() {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         audio.Play();
         for (int i = 0; i < welcomeText.Length; i++) {
             currentText = welcomeText.Substring(0,i);

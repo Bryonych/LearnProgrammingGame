@@ -37,7 +37,7 @@ public class StackQueueInput : MonoBehaviour
     public IEnumerator Remove(GameObject[] objects, GameObject screen, GameObject obj) {
         foreach(GameObject go in objects) {
             go.SetActive(false);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
         }
         Destroy(obj);
         Destroy(screen);
@@ -56,6 +56,7 @@ public class StackQueueInput : MonoBehaviour
     void Start()
     {
         currentField.onEndEdit.AddListener(delegate {OnStoppedEditing(currentField.text);});
+        if (currentField != null) { currentField.Select(); }
         beep = GameObject.Find("Beep").GetComponent<AudioSource>();
         bomp = GameObject.Find("Bomp").GetComponent<AudioSource>();
     }

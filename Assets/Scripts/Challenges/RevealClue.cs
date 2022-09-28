@@ -50,7 +50,7 @@ public class RevealClue : MonoBehaviour
         errorWindow.SetActive(false);
         character.increaseChallengeNumber();
         Destroy(displayWindow, beep.clip.length);
-        Destroy(screens[2], beep.clip.length);
+        // Destroy(screens[2], beep.clip.length);
         Vector3 pos = character.body.transform.position;
         if (pos.x < -20 && pos.x > -26 && pos.y < -9 && pos.y > -15) {
             clues[0].SetActive(true);
@@ -77,6 +77,7 @@ public class RevealClue : MonoBehaviour
 
     void Start() {
         currentField.onEndEdit.AddListener(delegate {OnStoppedEditing(currentField.text);});
+        if (currentField != null) { currentField.Select(); }
         beep = GameObject.Find("Beep").GetComponent<AudioSource>();
         bomp = GameObject.Find("Bomp").GetComponent<AudioSource>();
     }
