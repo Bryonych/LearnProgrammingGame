@@ -33,7 +33,7 @@ public class RevealClue : MonoBehaviour
     }
 
     public void DisplayError() {
-        string eText = "The list name is 'barrels', so our foreach loop needs to start with foreach(_ in barrels)";
+        string eText = "The list name is 'barrels', so our for each loop needs to start with for(Barrel_ : barrels)";
         ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
     }
 

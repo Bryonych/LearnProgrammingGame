@@ -8,6 +8,7 @@ public class CheckDebugging : MonoBehaviour
     public TMP_InputField currentField;
     public GameObject errorWindow;
     public TextMeshProUGUI errorText;
+    public TextMeshProUGUI instructionText;
     public Character character;
     public GameObject displayWindow;
     public GameObject[] buttons;
@@ -22,12 +23,15 @@ public class CheckDebugging : MonoBehaviour
     private string inputFirst = "Enter the correction in the input field before selecting the next bug.";
 
     public void OnStoppedEditing(string text) {
+        instructionText.text = "";
         errorWindow.SetActive(false);
         CorrectionChecker cc = new CorrectionChecker(errorWindow, errorText, bomp);
         if (cc.CheckInput(text, selected)) {
             if (beep != null) { beep.Play(); }
+            instructionText.text = "Well done, now select the next bug";
             currentField.enabled = false;
             buttons[selected-1].GetComponentInChildren<TMP_Text>().text = cc.GetCorrectText();
+            buttons[selected-1].GetComponentInChildren<TMP_Text>().color = new Color(1f,1f,1f);
             countFixed +=1;
             if (countFixed == 4) { EndGame(); }
         }
