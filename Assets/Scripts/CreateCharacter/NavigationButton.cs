@@ -27,11 +27,14 @@ public class NavigationButton : MonoBehaviour
         }
     } 
 
-    // Resents the body game object for change to new body
+    // Resets the body game object for change to new body
     public void resetBody() {
         SpriteRenderer sr = character.body.GetComponent<SpriteRenderer>();
         sr.sprite = null; 
+        SpriteRenderer srb = character.bottoms.GetComponent<SpriteRenderer>();
+        srb.sprite = null; 
         character.body.SetActive(true);
+        character.bottoms.SetActive(true);
     }
 
     // Stops displaying character game objects. 

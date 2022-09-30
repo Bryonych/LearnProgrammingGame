@@ -40,6 +40,7 @@ public class Hat {
         }
     }
 
+    // Adds the relevant sprite and controller to the character object. 
     public void addHatToCharacter(char person, string text) {
         Attribute att = null;
         if (person == 'h') {
