@@ -37,6 +37,8 @@ public class CorrectionChecker {
         if (text == "for(Integernumber:numbers){") { return true; }
         if (text == "for(IntegerNumber:numbers){") { return true; }
         if (text == "for(integernumber:numbers){") { eText = "Very close! Integer has a capital \'I\'"; }
+        else if (text == "for(Integernumber:numbers{") { eText = "Very close! You forgot to close your bracket"; }
+        else if (text == "for(Integernumber:numbers)") { eText = "Very close! You forgot to open the curly bracket"; }
         else if (text.Substring(0,3) == "For") { eText = "The \'for\' in a foreach loop has a lowercase \'f\'"; }
         else if (text == "for(Integernumber:Numbers){") { eText = "The list is called '\numbers\' with a little \'n\'"; }
         else if (text.ToLower() == "integer") { eText = "Enter the full line of code with the correction included"; }
@@ -51,7 +53,7 @@ public class CorrectionChecker {
         string eText;
         if (text == "if(number==6){") { return true; }
         if (text == "if") { eText = "Enter the full line of code with the correction included"; }
-        if (text == "if(number=6){") { eText = "In programming, a single '=' sign is for assignment. Use '==' to check equality.";}
+        else if (text == "if(number=6){") { eText = "In programming, a single '=' sign is for assignment. Use '==' to check equality.";}
         else { eText = "The bug in this code is that it starts with an \'else\' statement, instead of an \'if\'.\n"
                         +"Re-write the line with an \'if\' in place of the \'else\'"; }
         ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);

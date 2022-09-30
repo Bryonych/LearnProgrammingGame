@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class CheckDebugging : MonoBehaviour
 {
@@ -23,7 +24,6 @@ public class CheckDebugging : MonoBehaviour
     private string inputFirst = "Enter the correction in the input field before selecting the next bug.";
 
     public void OnStoppedEditing(string text) {
-        instructionText.text = "";
         errorWindow.SetActive(false);
         CorrectionChecker cc = new CorrectionChecker(errorWindow, errorText, bomp);
         if (cc.CheckInput(text, selected)) {
@@ -32,6 +32,7 @@ public class CheckDebugging : MonoBehaviour
             currentField.enabled = false;
             buttons[selected-1].GetComponentInChildren<TMP_Text>().text = cc.GetCorrectText();
             buttons[selected-1].GetComponentInChildren<TMP_Text>().color = new Color(1f,1f,1f);
+            buttons[selected-1].GetComponent<Button>().interactable = false;
             countFixed +=1;
             if (countFixed == 4) { EndGame(); }
         }
@@ -81,6 +82,7 @@ public class CheckDebugging : MonoBehaviour
     public void Selected(int n) {
         if (currentField.enabled == true) { DisplayError(inputFirst); }
         else {
+            instructionText.text = "";
             selected = n;
             if (beep != null) { beep.Play(); }
             buttons[n-1].GetComponentInChildren<TMP_Text>().color = new Color(146f/255f, 175f/255f, 233f/255f);

@@ -427,7 +427,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.35
+  m_fontSize: 54.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1573,7 +1573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -355.12988, y: 162.81012}
+  m_AnchoredPosition: {x: -355.12994, y: 162.81012}
   m_SizeDelta: {x: -710.26, y: 82.140015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &155886934
@@ -8856,7 +8856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -417.1101, y: -257.16}
+  m_AnchoredPosition: {x: -417.11017, y: -257.16}
   m_SizeDelta: {x: -834.21, y: 82.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1100189960
@@ -9021,8 +9021,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: If you are happy with your agent character, select continue. If you would
+  m_text: 'If you are happy with your agent character, select continue. If you would
     like to change any of the attributes, select back.
+
+
+    In the next scene, you
+    can use the arrow keys to move.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10750,7 +10754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -370.41992, y: 170.63}
+  m_AnchoredPosition: {x: -370.41998, y: 170.63}
   m_SizeDelta: {x: -740.85, y: 82.140015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1392937223
@@ -11154,7 +11158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -351.41992, y: 154.52}
+  m_AnchoredPosition: {x: -351.41998, y: 154.52}
   m_SizeDelta: {x: -702.83, y: 82.140015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1456708754
@@ -13839,7 +13843,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.35
+  m_fontSize: 66.2
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

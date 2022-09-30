@@ -224,4 +224,114 @@ public class TestCityChallanges
         Assert.IsTrue(ccl.CheckStackAndQueueOrder("Second", "3210"));
         Assert.IsFalse(mockErrorWindow.activeSelf);
     }
+
+    [Test]
+    public void BugCorrectionShouldFailMissingCurly() {
+        mockErrorWindow.SetActive(false);
+        CorrectionChecker cc = new CorrectionChecker(mockErrorWindow, mockText, mockAudioSource);
+        Assert.IsFalse(cc.CheckInput("for(Integernumber:numbers)", 2));
+        Assert.AreEqual(mockText.text, "Very close! You forgot to open the curly bracket");
+        Assert.IsTrue(mockErrorWindow.activeSelf);
+    }
+
+    
+    [Test]
+    public void BugCorrectionShouldFailWrongInput() {
+        mockErrorWindow.SetActive(false);
+        CorrectionChecker cc = new CorrectionChecker(mockErrorWindow, mockText, mockAudioSource);
+        Assert.IsFalse(cc.CheckInput("string", 2));
+        string reply = "The bug in this code is the type used is String, rather than integer, so it should read:\n"
+                        +"for (Integer number : numbers) {";
+        Assert.AreEqual(mockText.text, reply);
+        Assert.IsTrue(mockErrorWindow.activeSelf);
+    }
+
+    [Test]
+    public void BugCorrectionShouldPass2() {
+        mockErrorWindow.SetActive(false);
+        CorrectionChecker cc = new CorrectionChecker(mockErrorWindow, mockText, mockAudioSource);
+        Assert.IsTrue(cc.CheckInput("for(Integernumber:numbers){", 2));
+        Assert.IsFalse(mockErrorWindow.activeSelf);
+    }
+
+    [Test]
+    public void BugCorrectionShouldFailWrongInputMissingEquals() {
+        mockErrorWindow.SetActive(false);
+        CorrectionChecker cc = new CorrectionChecker(mockErrorWindow, mockText, mockAudioSource);
+        Assert.IsFalse(cc.CheckInput("if(number=6){", 3));
+        Assert.AreEqual(mockText.text, "In programming, a single '=' sign is for assignment. Use '==' to check equality.");
+        Assert.IsTrue(mockErrorWindow.activeSelf);
+    }
+
+    [Test]
+    public void BugCorrectionShouldFailWrongInput3() {
+        mockErrorWindow.SetActive(false);
+        CorrectionChecker cc = new CorrectionChecker(mockErrorWindow, mockText, mockAudioSource);
+        Assert.IsFalse(cc.CheckInput("else", 3));
+        string reply = "The bug in this code is that it starts with an \'else\' statement, instead of an \'if\'.\n"
+                        +"Re-write the line with an \'if\' in place of the \'else\'";
+        Assert.AreEqual(mockText.text, reply);
+        Assert.IsTrue(mockErrorWindow.activeSelf);
+    }
+        
+    [Test]
+    public void BugCorrectionShouldPass3() {
+        mockErrorWindow.SetActive(false);
+        CorrectionChecker cc = new CorrectionChecker(mockErrorWindow, mockText, mockAudioSource);
+        Assert.IsTrue(cc.CheckInput("if(number==6){", 3));
+        Assert.IsFalse(mockErrorWindow.activeSelf);
+    }
+
+    [Test]
+    public void BugCorrectionShouldFailWrongLine() {
+        mockErrorWindow.SetActive(false);
+        CorrectionChecker cc = new CorrectionChecker(mockErrorWindow, mockText, mockAudioSource);
+        Assert.IsFalse(cc.CheckInput("if{", 5));
+        Assert.AreEqual(mockText.text, "This is code for a different line. You are correcting the fifth line down.");
+        Assert.IsTrue(mockErrorWindow.activeSelf);
+    }
+
+    [Test]
+    public void BugCorrectionShouldFailWrongInput5() {
+        mockErrorWindow.SetActive(false);
+        CorrectionChecker cc = new CorrectionChecker(mockErrorWindow, mockText, mockAudioSource);
+        Assert.IsFalse(cc.CheckInput("jfkdjafl", 5));
+        Assert.AreEqual(mockText.text, "The bug in this line is that the \'if\' block is closed with a normal bracket, but it should be a curly bracket");
+        Assert.IsTrue(mockErrorWindow.activeSelf);
+    }
+
+    [Test]
+    public void BugCorrectionShouldPass5() {
+        mockErrorWindow.SetActive(false);
+        CorrectionChecker cc = new CorrectionChecker(mockErrorWindow, mockText, mockAudioSource);
+        Assert.IsTrue(cc.CheckInput("}", 5));
+        Assert.IsFalse(mockErrorWindow.activeSelf);
+    }
+
+    [Test]
+    public void BugCorrectionShouldFailMissingCurly6() {
+        mockErrorWindow.SetActive(false);
+        CorrectionChecker cc = new CorrectionChecker(mockErrorWindow, mockText, mockAudioSource);
+        Assert.IsFalse(cc.CheckInput("else", 6));
+        Assert.AreEqual(mockText.text, "The curly brackets need to open after the \'else\'");
+        Assert.IsTrue(mockErrorWindow.activeSelf);
+    }
+
+    [Test]
+    public void BugCorrectionShouldFailWrongInput6() {
+        mockErrorWindow.SetActive(false);
+        CorrectionChecker cc = new CorrectionChecker(mockErrorWindow, mockText, mockAudioSource);
+        Assert.IsFalse(cc.CheckInput("fdfkj", 6));
+        Assert.AreEqual(mockText.text, "The bug in this line is that it is an \'if\' statement, where it should be \'else\'");
+        Assert.IsTrue(mockErrorWindow.activeSelf);
+    }
+
+    [Test]
+    public void BugCorrectionShouldPass6() {
+        mockErrorWindow.SetActive(false);
+        CorrectionChecker cc = new CorrectionChecker(mockErrorWindow, mockText, mockAudioSource);
+        Assert.IsTrue(cc.CheckInput("else{", 6));
+        Assert.IsFalse(mockErrorWindow.activeSelf);
+    }
+
 }
