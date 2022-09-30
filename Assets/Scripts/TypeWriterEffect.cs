@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class <c>TypeWriterEffect<c> Displays text and plays typewriter for opening scene. 
+/// <summary>
 public class TypeWriterEffect : MonoBehaviour
 {
     
@@ -19,6 +22,7 @@ public class TypeWriterEffect : MonoBehaviour
         StartCoroutine(ShowText());
     }
 
+    // Plays text and audio, sort of insync. 
     IEnumerator ShowText() {
         yield return new WaitForSeconds(2);
         audio.Play();

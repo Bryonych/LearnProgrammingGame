@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Class <c>RevealClue<c> handles changing the pages for all challenges.
+/// Listtens to input for list access challenge and passes to CheckChallengeLogic for checking
+/// <summary> 
 public class RevealClue : MonoBehaviour
 {   
     public Character character;
@@ -18,11 +22,14 @@ public class RevealClue : MonoBehaviour
     AudioSource beep;
     AudioSource bomp;
     
+    // Handles input to text field. 
     public void OnStoppedEditing(string text) {
         CheckChallengeLogic ccl = new CheckChallengeLogic(errorWindow, errorText, bomp);
         errorWindow.SetActive(false);
+        // Ignores no input
         if (text.Length > 0) {
             if (currentField.name == "ListAccessInputField") {
+                // If passed checks, play success noise, change windows. 
                 if (ccl.HandleListAccessEntry(text)) {
                     if (beep != null) { beep.Play(); }
                     Destroy(displayWindow, beep.clip.length);
@@ -32,11 +39,13 @@ public class RevealClue : MonoBehaviour
         }
     }
 
+    // Displays an error on incorrect input.
     public void DisplayError() {
         string eText = "The list name is 'barrels', so our for each loop needs to start with for(Barrel_ : barrels)";
         ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
     }
 
+    // Changes to the next screen.
     public void ChangeScreen() {
         if (current == 1) { button.SetActive(false); }
         screens[current].SetActive(false);
@@ -44,6 +53,7 @@ public class RevealClue : MonoBehaviour
         current += 1;
     }
 
+    // Plays the church animation for list access challenge. 
     public void ShowClue() {
         if (beep != null) { beep.Play(); }
         button.SetActive(false);
@@ -75,9 +85,13 @@ public class RevealClue : MonoBehaviour
         }
     }
 
+    // Start is called before the first frame update.
     void Start() {
+        // Listen to the input field
         currentField.onEndEdit.AddListener(delegate {OnStoppedEditing(currentField.text);});
+        // Put the cursor in the input field
         if (currentField != null) { currentField.Select(); }
+        // Get the audio
         beep = GameObject.Find("Beep").GetComponent<AudioSource>();
         bomp = GameObject.Find("Bomp").GetComponent<AudioSource>();
     }

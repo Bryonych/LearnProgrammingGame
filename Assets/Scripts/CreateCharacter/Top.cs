@@ -36,6 +36,7 @@ public class Top {
         }
     }
 
+    // Adds the relevant sprite and controller to the character object. 
     public void addTopToCharacter(char person, string text) {
         Attribute att = null;
         if (person == 's') {

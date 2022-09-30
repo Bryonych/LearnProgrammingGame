@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// Class <c>AddAttribute<c> Listens for input in the datatypes challenge
+/// and passes to relevant classes to create attributes. 
+/// <summary>
 public class AddAttribute : MonoBehaviour
 {
     public TMP_InputField currentField;
@@ -19,6 +23,7 @@ public class AddAttribute : MonoBehaviour
     AudioSource beep;
     AudioSource bomp;
 
+    // Passes to relevant class based on input
     public void OnStoppedEditing(string text) {
         errorWindow.SetActive(false);     
         bool check = false;
@@ -41,19 +46,23 @@ public class AddAttribute : MonoBehaviour
                 break; 
         }
         if(check) {
+            // Final test, move to city scene
             if (go.name == "Top") {
                 Invoke("EndLesson", beep.clip.length);
                 return;
             }
+            // Move to next window
             Invoke("ChangeWindow", beep.clip.length);
         }
     }
 
+    // Moves to the next screen
     public void ChangeWindow() {
         displayWindow.SetActive(false);
         nextWindow.SetActive(true);
     }
 
+    // Ends the lesson
     public void EndLesson() {
         displayWindow.SetActive(false);
         errorWindow.SetActive(false);
@@ -63,9 +72,12 @@ public class AddAttribute : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        // Listens to input field
         currentField.onEndEdit.AddListener(delegate {OnStoppedEditing(currentField.text);});
+        // Puts cursor in input field
         currentField.Select();
+        // Finds audio
         beep = GameObject.Find("Beep").GetComponent<AudioSource>();
         bomp = GameObject.Find("Bomp").GetComponent<AudioSource>();
     }

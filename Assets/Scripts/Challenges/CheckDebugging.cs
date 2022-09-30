@@ -4,6 +4,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class <c>CheckDebugging<c> listens for button presses and text input in 
+/// the debugging challenge. 
+/// <summary>
 public class CheckDebugging : MonoBehaviour
 {
     public TMP_InputField currentField;
@@ -23,9 +27,12 @@ public class CheckDebugging : MonoBehaviour
     private int countFixed = 0;
     private string inputFirst = "Enter the correction in the input field before selecting the next bug.";
 
+    // Handles input in the text box.
     public void OnStoppedEditing(string text) {
         errorWindow.SetActive(false);
         CorrectionChecker cc = new CorrectionChecker(errorWindow, errorText, bomp);
+        // If passed checks, play success noise, display instruction, disable text input field, update
+        // code, change colour back to white and increase the count.
         if (cc.CheckInput(text, selected)) {
             if (beep != null) { beep.Play(); }
             instructionText.text = "Well done, now select the next bug";
@@ -34,18 +41,20 @@ public class CheckDebugging : MonoBehaviour
             buttons[selected-1].GetComponentInChildren<TMP_Text>().color = new Color(1f,1f,1f);
             buttons[selected-1].GetComponent<Button>().interactable = false;
             countFixed +=1;
+            // All debugging fixed. 
             if (countFixed == 4) { EndGame(); }
         }
     }
 
+    // Displays the game over page. 
     public void EndGame() {
         Destroy(displayWindow, beep.clip.length);
         attacker.SetActive(false);
         cryingAttacker.SetActive(true);
         gameOver.SetActive(true);
-        
     }
 
+    // Display errors for wrong selection
     public void SelectedFirst() {
         if (currentField.enabled == true) { DisplayError(inputFirst); }
         string eText = "The first line has no bugs. This line creates a list integers called 'numbers' that contains "
@@ -79,8 +88,11 @@ public class CheckDebugging : MonoBehaviour
         DisplayError(eText);
     }
 
+    // Handles correct selection.
     public void Selected(int n) {
+        // Already selected one
         if (currentField.enabled == true) { DisplayError(inputFirst); }
+        // Remove instruction, play success noise, colour selected text blue, enable text input field, remove previous input
         else {
             instructionText.text = "";
             selected = n;
@@ -92,6 +104,7 @@ public class CheckDebugging : MonoBehaviour
         }
     }
 
+    // Passes to error handler to display error
     public void DisplayError(string eText) {
         ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
     }
@@ -100,6 +113,7 @@ public class CheckDebugging : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Listen for text input, disable text field and find audio sounds
         currentField.onEndEdit.AddListener(delegate {OnStoppedEditing(currentField.text);});
         currentField.enabled = false;
         beep = GameObject.Find("Beep").GetComponent<AudioSource>();

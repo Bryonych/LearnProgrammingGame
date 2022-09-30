@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// Class <c>ErrorHandler<c> Displays and error on the screen.
+/// <summary>
 public class ErrorHandler {
 
     private AudioSource bomp;
@@ -11,6 +14,7 @@ public class ErrorHandler {
     private GameObject errorWindow;
     private TextMeshProUGUI errorText;
 
+    // Constructs an ErrorHandler object
     public ErrorHandler(AudioSource bomp, string text, GameObject errorWindow, TextMeshProUGUI errorText) {
         this.bomp = bomp;
         this.text = text;
@@ -19,6 +23,7 @@ public class ErrorHandler {
         handleError();
     }
 
+    // Displays the error and plays error noise. 
     public void handleError() {
         if (bomp != null) { bomp.Play(); }
         errorText.text = text;

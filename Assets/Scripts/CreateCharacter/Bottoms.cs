@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Class <c>Bottoms<c> Extends Attribute for a Bottoms attribute
+/// <summary>
 public class Bottoms : Attribute {
 
     private Sprite sTrousers;
@@ -19,6 +22,7 @@ public class Bottoms : Attribute {
                 this.bottoms = go;
             }
 
+    // Checks the logic of the input and adds attribute if correct, plays error if not. 
     public bool checkLogicBottoms(string text, GameObject errorWindow, TextMeshProUGUI errorText, AudioSource beep, AudioSource bomp) {
         if (text == "true" || text == "false") {
             addBottomsToCharacter(character.bodyShape, text);
@@ -31,6 +35,7 @@ public class Bottoms : Attribute {
         }
     }
 
+    // Sets the sprites for the bottoms (only shorts were passed previously).
     public void setSprites(Sprite sTrousers, Sprite hTrousers, Sprite sShorts, Sprite hShorts, RuntimeAnimatorController[] controllers) {
         this.sTrousers = sTrousers;
         this.hTrousers = hTrousers;
@@ -39,6 +44,7 @@ public class Bottoms : Attribute {
         this.controllers = controllers;
     }
 
+    // Checks the input and creates the attribute with the relevant sprite and controller. 
     public void addBottomsToCharacter(char person, string text) {
         Attribute att = null;
         if (person == 's') {
@@ -58,8 +64,10 @@ public class Bottoms : Attribute {
             }
         }
         else {
+            // Incorrect input
             return;
         }
+        // Create the attribute and don't display it
         if (att != null) { att.createAttribute(false); }
     }
 

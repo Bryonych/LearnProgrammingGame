@@ -2,37 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Class <c>Character<c> ScriptableObject that stores all information about the character.
+/// <summary>
 [CreateAssetMenu(fileName = "New Character", menuName = "Character")]
 public class Character : ScriptableObject {
 
     private new string name;
     private string agentNumber;
 
+    // Game objects
     public GameObject body;
     public GameObject hair;
     public GameObject hat;
     public GameObject top;
     public GameObject bottoms;
     public GameObject shoes;
-
+    // Animators
     RuntimeAnimatorController bodyController;
     RuntimeAnimatorController hairController;
     RuntimeAnimatorController hatController;
     RuntimeAnimatorController topController;
     RuntimeAnimatorController bottomsController;
     RuntimeAnimatorController shoesController;
-
+    // For checking which challenge to display
     private int challengeNumber = 0;    
 
     public GameObject challengeCanvas;
-
+    // Store game objects for updating
     List<GameObject> parts = new List<GameObject>();
 
-    public bool hasHair = false;
     public bool hasHat = false;
-    public bool hasGlasses = false;
-    public bool hasMask = false;
-    public bool hasShoes = false;
 
     public char bodyShape;
 

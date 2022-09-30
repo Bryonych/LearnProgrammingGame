@@ -17,7 +17,7 @@ public class Hair {
     private RuntimeAnimatorController[] controllers;
     private Character character;
 
-    /// Constructs a Shoes object
+    /// Constructs a Hair object
     public Hair(Sprite[] sprites, RuntimeAnimatorController[] controllers, Character character, GameObject hair) {
         this.sprites = sprites;
         this.controllers = controllers;
@@ -25,12 +25,14 @@ public class Hair {
         this.hair = hair;
     }
 
+    // Checks the logic on the input received and adds hair to character if it is correct, displays error if not.
     public bool checkLogicHair(string text, GameObject errorWindow, TextMeshProUGUI errorText, AudioSource beep, AudioSource bomp) {
         if (text.Length > 0) {
             if (text[0] != '\"' || text[text.Length-1] != '\"') {
                 ErrorHandler eh = new ErrorHandler(bomp, "A string needs to be in quotation marks", errorWindow, errorText);
                 return false;
             }
+            // Correct
             else if (text == "\"long green\"" || text == "\"short black\"" || text == "\"dreads\"" 
                     || text == "\"short orange\"") {
 
@@ -46,6 +48,7 @@ public class Hair {
         return false;
     }
 
+    // Adds relevant sprite and controller to the character object.
     public void addHairToCharacter(char person, string text, Sprite[] sprites, RuntimeAnimatorController[] controllers) {
         Attribute att = null;
         if (person == 's') {

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+/// <summary>
+/// Class <c>PlayerMovementController<c> Controls the movement of the character.
+/// <summary>
 public class PlayerMovementController : MonoBehaviour
 {
 
@@ -14,14 +17,15 @@ public class PlayerMovementController : MonoBehaviour
 
     Rigidbody2D rbody;
 
+    // Gets the relevant components. 
     private void Awake() {
         rbody = transform.parent.GetComponent<Rigidbody2D>();
         isoRenderer = GetComponentInChildren<PlayerRenderer>();
-        // steps = GetComponentsInChildren<AudioSource>();
         left = GameObject.Find("LeftStep").GetComponent<AudioSource>();
         right = GameObject.Find("RightStep").GetComponent<AudioSource>();
     }
 
+    // Calculates position, movement and direction and moves the character. 
     void FixedUpdate() {
         Vector2 currentPos = rbody.position;
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -36,6 +40,7 @@ public class PlayerMovementController : MonoBehaviour
         rbody.MovePosition(newPos);
     }
 
+    // Converts directsions to isometric
     public Vector2 ConvertToIsometric(Vector2 cartesian, Vector2 direction) {
         Vector2 screenPos = screenPos = new Vector2((float)(cartesian.x - cartesian.y), (float)((cartesian.x + cartesian.y)/2.0));
         if (direction.y == -1.0 || direction.x == -1.0) {
@@ -45,6 +50,7 @@ public class PlayerMovementController : MonoBehaviour
         return screenPos;
     }
 
+    // Returns the direction the character is moving. 
     public Vector2 GetDirection(Vector2 dir) {
         Vector2 direction = new Vector2(0, 0);
         if (dir.y > 0) {
@@ -63,6 +69,7 @@ public class PlayerMovementController : MonoBehaviour
         return direction;
     }
 
+    // Play the step audiio
     public void PlayLeftStep() {
         left.Play();
     }

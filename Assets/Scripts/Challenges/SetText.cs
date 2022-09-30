@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Class <c>SetText<c> Writes text for the pages of the list access challenge.
+/// <summary>
 public class SetText : MonoBehaviour {
     public GameObject lessonPanel;
     public GameObject inputField;
@@ -11,6 +14,7 @@ public class SetText : MonoBehaviour {
     public GameObject button;
     public int page;
 
+    // Checks which page and displays the text with the agent number stored in the character class. 
     void Update() {
         if (page == 0) {
             displayText.SetText("Welcome to the city Agent " + character.getAgentNumber() + ".\n"
@@ -37,6 +41,7 @@ public class SetText : MonoBehaviour {
 
     }
 
+    // Increases the page count
     public void turnPage() {
         page += 1;
     }

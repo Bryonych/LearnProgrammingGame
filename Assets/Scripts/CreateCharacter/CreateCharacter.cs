@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class <c>CreateCharacter<c> Listens for input in the datatypes challenge
+/// and passes to relevant classes to create attributes. 
+/// <summary>
 public class CreateCharacter : MonoBehaviour
 {
 
@@ -10,6 +14,7 @@ public class CreateCharacter : MonoBehaviour
     GameObject bottoms;
     public RuntimeAnimatorController controller;
     
+    // Passes to the Body class to create the atttribute.
     public void SelectBody(Sprite bd) {
         character.resetParts();
         character.resetChallengeNumber();
@@ -24,6 +29,7 @@ public class CreateCharacter : MonoBehaviour
         }
     }
 
+    // Pases to the Bottoms class to create attribute
     public void SelectBottoms(Sprite b) {
         Bottoms bot = new Bottoms(b, controller, character, bottoms);
         bot.createAttribute(true);

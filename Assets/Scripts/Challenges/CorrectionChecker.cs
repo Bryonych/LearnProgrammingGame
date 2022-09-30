@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Class <c>CorrectionChecker<c> handles the input from the debugging challenge.
+/// Displays relevant error messages for incorrect input.
+/// <summary>
 public class CorrectionChecker {
 
     private GameObject errorWindow;
@@ -10,12 +14,14 @@ public class CorrectionChecker {
     private AudioSource bomp;
     private string correctText;
 
+    // Constructs a CorrectionChecker object
     public CorrectionChecker(GameObject errorWindow, TextMeshProUGUI errorText, AudioSource bomp) {
         this.errorWindow = errorWindow;
         this.errorText = errorText;
         this.bomp = bomp;
     }
 
+    // Passes to relevant method, based on the code line. 
     public bool CheckInput(string text, int lineSelected) {
         switch(lineSelected) {
             case 2:
@@ -31,6 +37,7 @@ public class CorrectionChecker {
         }
     }
 
+    // Checks the input for the second code line, displays a relevant errror or returns true if correct. 
     public bool CheckTwo(string text) {
         correctText = "   for (Integer number : numbers) {";
         string eText;
@@ -48,6 +55,7 @@ public class CorrectionChecker {
         return false;
     }
 
+    // Checks the input for the third code line, displays a relevant errror or returns true if correct. 
     public bool CheckThree(string text) {
         correctText = "       if (number == 6) {";
         string eText;
@@ -60,6 +68,7 @@ public class CorrectionChecker {
         return false;
     }
 
+    // Checks the input for the fifth code line, displays a relevant errror or returns true if correct. 
     public bool CheckFive(string text) {
         correctText = "       }";
         string eText;
@@ -70,6 +79,7 @@ public class CorrectionChecker {
         return false;
     }
 
+    // Checks the input for the sixth code line, displays a relevant errror or returns true if correct. 
     public bool CheckSix(string text) {
         correctText = "       else {";
         string eText;
@@ -80,6 +90,7 @@ public class CorrectionChecker {
         return false;
     }
 
+    // Returns correct text for the line, so it can be updated on the screen.
     public string GetCorrectText() {
         return correctText;
     }
