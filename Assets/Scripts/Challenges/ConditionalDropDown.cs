@@ -16,6 +16,7 @@ public class ConditionalDropDown : MonoBehaviour
     public TextMeshProUGUI displaySelected;
     public TMP_Dropdown selected;
     public GameObject button;
+    public GameObject compass;
     private int codeLineCount = 0;
     List<TMP_Dropdown.OptionData> menuOptions;
     AudioSource beep;
@@ -39,6 +40,7 @@ public class ConditionalDropDown : MonoBehaviour
         // If all correct, play success noise, display clue and button to move on and store next challenge number.
         if (codeLineCount == 6) {
             beep.Play();
+            compass.SetActive(true);
             displaySelected.text = "The attacker went North!";
             button.SetActive(true);
             character.increaseChallengeNumber();
@@ -54,6 +56,7 @@ public class ConditionalDropDown : MonoBehaviour
         }
         // Closes the screen.
         displayWindow.SetActive(false);
+        compass.SetActive(false);
     }
     
 }

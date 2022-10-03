@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Class <c>CheckChallengeLogic<c> handles checking the logic from the city challenges,
+/// displays error messages and returns to MonoBehaviour classes whether input is correct.
+/// <summary>
 public class CheckChallengeLogic {
 
     private GameObject errorWindow;
@@ -13,12 +17,14 @@ public class CheckChallengeLogic {
     private string[] codeOrder = { " for (Road road : roadList) {", "    if (road.contains(document) {",
                                 "       display(road.getDirection());", "    }", " }"};
 
+    // Constructs a CheckChallengeLogic object
     public CheckChallengeLogic(GameObject ew, TextMeshProUGUI et, AudioSource bomp) {
         this.errorWindow = ew;
         this.errorText = et;
         this.bomp = bomp;
     }
 
+    // Checks the user input for accessing a barrel in the barrels list.
     public bool HandleListAccessEntry(string text) {
         if (!text.StartsWith("barrels")) {
             string eText = "To access an item in a list, start with the list's name - barrels";
@@ -37,37 +43,45 @@ public class CheckChallengeLogic {
             ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
         }
         else {
+            // Passed checks
             return true;
         }
         return false;
     }
 
+    // Checks the order selected for the conditionals challenge
     public int CheckConditionalsOrder(int index, int count, List<TMP_Dropdown.OptionData> menuOptions, TextMeshProUGUI displaySelected) {
         if (index == correctConditionalsOrder[count] || index == altCorrectConditionalsOrder[count]) {
             displaySelected.text += menuOptions[index].text + "\n";
+            // Passed, increase the count
             return count +1;
         }
         else {
             string eText = "The order should be: if(statement){ instruction } else { instruction }";
             ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
+            // Failed, return old count
             return count;
         }
     }
 
+    // Checks the order selected for the combination of iteraing and conditionals
     public int CheckOrderCombined(int selected, int order, TextMeshProUGUI[] displayBox) {
         if (selected == order) {
             displayBox[order].text = codeOrder[order];
+            // Passed, increase the count
             return order +1;
         }
         else {
             string text = "The order should be:\n for(Type _ : _) { if(condition) { //do something } }";
             ErrorHandler eh = new ErrorHandler(bomp, text, errorWindow, errorText);
+            // Failed, return old count
             return order;
         }
     }
 
+    // Checks the input for the order of the stacks and queues.
     public bool CheckStackAndQueueOrder(string fieldName, string text) {
-
+        // Error cases.
         if ((fieldName == "First" && text != "0123") || (fieldName == "Second" && text != "3210")) {
             string eText;
             if (fieldName == "First" && text[0] == '0') {
@@ -85,6 +99,7 @@ public class CheckChallengeLogic {
             ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
             return false;
         }
+        // Passed
         return true;
     }
 

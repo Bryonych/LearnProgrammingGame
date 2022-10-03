@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class <c>FollowPlayer<c> Points the camera at the character while moving.
+/// <summary>
 public class FollowPlayer : MonoBehaviour
 {
     Transform player;

@@ -15,6 +15,7 @@ public class CombineLesson : MonoBehaviour
     public GameObject button;
     public GameObject displayWindow;
     public Character character;
+    public GameObject compass;
     private int order = 0;
     AudioSource beep;
     AudioSource bomp;
@@ -31,6 +32,7 @@ public class CombineLesson : MonoBehaviour
                 t.text = "";
             }
             beep.Play();
+            compass.SetActive(true);
             displayBox[0].text = "West";
             button.SetActive(true);
         }
@@ -47,6 +49,7 @@ public class CombineLesson : MonoBehaviour
         character.increaseChallengeNumber();
         // Close window
         displayWindow.SetActive(false);
+        compass.SetActive(false);
     }
 
     // Start is called before the first frame update
