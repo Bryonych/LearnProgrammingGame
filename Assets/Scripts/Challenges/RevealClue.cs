@@ -41,7 +41,7 @@ public class RevealClue : MonoBehaviour
 
     // Displays an error on incorrect input.
     public void DisplayError() {
-        string eText = "The list name is 'barrels', so our for each loop needs to start with for(Barrel_ : barrels)";
+        string eText = "The list name is 'barrels', so our for each loop needs to start with:\n for(Barrel barrel : barrels) {";
         ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
     }
 
@@ -74,7 +74,7 @@ public class RevealClue : MonoBehaviour
             clues[2].SetActive(true);
             clues[2].GetComponent<Animator>().Play("ChurchAnimation3");
         }
-        else if (pos.x < 6.9 && pos.x > 3.8 && pos.y < 12.5 && pos.y > 10.9) {
+        else if (pos.x < 7.5 && pos.x > 3.0 && pos.y < 13.0 && pos.y > 9.0) {
             clues[3].SetActive(true);
             clues[3].GetComponent<Animator>().Play("ChurchAnimation4");
         }

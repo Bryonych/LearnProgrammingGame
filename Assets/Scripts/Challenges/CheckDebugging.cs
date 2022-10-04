@@ -97,6 +97,7 @@ public class CheckDebugging : MonoBehaviour
             instructionText.text = "";
             selected = n;
             if (beep != null) { beep.Play(); }
+            errorWindow.SetActive(false);
             buttons[n-1].GetComponentInChildren<TMP_Text>().color = new Color(146f/255f, 175f/255f, 233f/255f);
             currentField.enabled = true;
             currentField.Select();

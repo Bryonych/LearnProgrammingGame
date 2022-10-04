@@ -18,6 +18,7 @@ public class SetText : MonoBehaviour {
     void Update() {
         if (page == 0) {
             displayText.SetText("Welcome to the city Agent " + character.getAgentNumber() + ".\n"
+            + "If you need help at any stage, try entering a guess and help will be provided.\n"
             + "We have received intelligence that there are clues to the attacker's whereabouts inside a list of barrels.\n\n"
             + "A list is an ordered collection of data, with the same data type.\n");
         }
