@@ -27,7 +27,7 @@ public class TypesInputChecker
     // Passes to the relevant method based on input type. 
     public bool CheckInput(string text) {
         if (text.Length > 0) {
-            if (fieldName == "StringInputField" && text.Length > 1) {
+            if (fieldName == "StringInputField" && text.Length > 0) {
                 return checkString(text);
             }
             else if (fieldName == "IntInputField") {
