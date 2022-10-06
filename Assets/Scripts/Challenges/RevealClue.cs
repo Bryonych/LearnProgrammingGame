@@ -60,7 +60,6 @@ public class RevealClue : MonoBehaviour
         errorWindow.SetActive(false);
         character.increaseChallengeNumber();
         Destroy(displayWindow, beep.clip.length);
-        // Destroy(screens[2], beep.clip.length);
         Vector3 pos = character.body.transform.position;
         if (pos.x < -20 && pos.x > -26 && pos.y < -9 && pos.y > -15) {
             clues[0].SetActive(true);

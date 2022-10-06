@@ -34,7 +34,7 @@ public class SetText : MonoBehaviour {
             + "numbers.get(0) and the number 8 like this: numbers.get(2)\nThe 'get' method in the List class returns the element at the provided index.");
         }
         else if (page == 3) {
-            displayText.SetText("We have reason to believe there is a list of barrels in your current vacinity. To access the clue, select a "
+            displayText.SetText("We have reason to believe there is a list of barrels in your current vicinity. To access the clue, select a "
             + "barrel from the list using its index number and the get method as described. The name of the list is 'barrels'.");
             button.SetActive(false);
             inputField.SetActive(true);

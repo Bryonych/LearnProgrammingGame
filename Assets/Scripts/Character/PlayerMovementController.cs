@@ -11,7 +11,6 @@ public class PlayerMovementController : MonoBehaviour
 
     public float movementSpeed = 2.5f;
     PlayerRenderer isoRenderer;
-    // AudioSource[] steps;
     AudioSource left;
     AudioSource right;
 
@@ -34,7 +33,7 @@ public class PlayerMovementController : MonoBehaviour
         Vector2 direction = GetDirection(inputVector);
         Vector2 movement = inputVector * movementSpeed * direction * Time.fixedDeltaTime;
         Vector2 rotateVector = ConvertToIsometric(movement, direction);
-        rotateVector = (direction.y == 1.0 || direction.y == -1.0) ? new Vector2(rotateVector.x, rotateVector.y-0.007f) : rotateVector;
+        rotateVector = (direction.y == 1.0 || direction.y == -1.0) ? new Vector2(rotateVector.x, rotateVector.y-0.02f) : rotateVector;
         Vector2 newPos = (direction.y == -1.0 || direction.x == -1.0)? currentPos - rotateVector : currentPos + rotateVector;
         isoRenderer.SetDirection(inputVector * movementSpeed);
         rbody.MovePosition(newPos);
