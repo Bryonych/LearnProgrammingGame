@@ -66,21 +66,29 @@ public class CheckChallengeLogic {
 
     // Checks the order selected for the combination of iteraing and conditionals
     public int CheckOrderCombined(int selected, int order, TextMeshProUGUI[] displayBox) {
+        string eText = "";
         if (selected == order) {
             displayBox[order].text = codeOrder[order];
             // Passed, increase the count
             return order +1;
         }
-        else {
-            string text = "The order should be:\n for(Type _ : _) { if(condition) { //do something } }";
-            ErrorHandler eh = new ErrorHandler(bomp, text, errorWindow, errorText);
-            // Failed, return old count
-            return order;
+        else if (selected == 4 && order == 3) {
+            eText = "The 'if' block is indented inside the 'for' loop, so you need the indented curly brace";
         }
+        else if (selected == 3 && order == 4) {
+            eText = "This is closing the outer code block, so you need the curly brace that isn't indented";
+        }
+        else {
+            eText = "The order should be:\n for(Type _ : _) { if(condition) { //do something } }";
+        }
+        ErrorHandler eh = new ErrorHandler(bomp, eText, errorWindow, errorText);
+        // Failed, return old count
+        return order;
     }
 
     // Checks the input for the order of the stacks and queues.
     public bool CheckStackAndQueueOrder(string fieldName, string text) {
+        if (text.Length == 0) { return false; }
         // Error cases.
         if ((fieldName == "First" && text != "0123") || (fieldName == "Second" && text != "3210")) {
             string eText;

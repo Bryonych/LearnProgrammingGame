@@ -18,6 +18,7 @@ public class RevealClue : MonoBehaviour
     public TextMeshProUGUI errorText;
     public GameObject[] screens;
     public GameObject button;
+    public GameObject backButton;
     private int current = 0;
     AudioSource beep;
     AudioSource bomp;
@@ -53,10 +54,20 @@ public class RevealClue : MonoBehaviour
         current += 1;
     }
 
+    // Moves back to last screen
+    public void LastScreen() {
+        if (current == 0) { return; } // Shouldn't happen
+        screens[current].SetActive(false);
+        screens[current-1].SetActive(true);
+        current -= 1;
+        button.SetActive(true);
+    }
+
     // Plays the church animation for list access challenge. 
     public void ShowClue() {
         if (beep != null) { beep.Play(); }
         button.SetActive(false);
+        backButton.SetActive(false);
         errorWindow.SetActive(false);
         character.increaseChallengeNumber();
         Destroy(displayWindow, beep.clip.length);

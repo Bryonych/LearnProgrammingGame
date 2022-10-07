@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 /// <summary>
@@ -19,6 +20,7 @@ public class StackQueueInput : MonoBehaviour
     public TextMeshProUGUI errorText;
     public Character character;
     public GameObject displayWindow;
+    public GameObject backButton;
     AudioSource beep;
     AudioSource bomp;
 
@@ -43,12 +45,14 @@ public class StackQueueInput : MonoBehaviour
 
     // Removes the sprites in the order they are removed from stack/queue
     public IEnumerator Remove(GameObject[] objects, GameObject screen, GameObject obj) {
+        backButton.GetComponent<Button>().interactable = false;
         foreach(GameObject go in objects) {
             go.SetActive(false);
             yield return new WaitForSeconds(1);
         }
         Destroy(obj);
         Destroy(screen);
+        backButton.GetComponent<Button>().interactable = true;
     }
 
     // Closes the challenge
