@@ -52,7 +52,7 @@ public class ConditionalDropDown : MonoBehaviour
         // Reinstates player movement. 
         foreach (GameObject go in character.getParts()) {
             PlayerMovementController pmc = go.GetComponent(typeof(PlayerMovementController)) as PlayerMovementController;
-            pmc.movementSpeed = 2.5f;
+            pmc.UpdateMovementSpeed(2.5f);
         }
         // Closes the screen.
         displayWindow.SetActive(false);

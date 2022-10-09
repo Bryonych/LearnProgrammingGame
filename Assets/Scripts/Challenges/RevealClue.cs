@@ -91,7 +91,7 @@ public class RevealClue : MonoBehaviour
         
         foreach (GameObject go in character.getParts()) {
             PlayerMovementController pmc = go.GetComponent(typeof(PlayerMovementController)) as PlayerMovementController;
-            pmc.movementSpeed = 2.5f;
+            pmc.UpdateMovementSpeed(2.5f);
         }
     }
 

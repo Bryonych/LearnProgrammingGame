@@ -18,8 +18,7 @@ public class SetText : MonoBehaviour {
     // Checks which page and displays the text with the agent number stored in the character class. 
     void Update() {
         if (page == 0) {
-            displayText.SetText("Welcome to the city Agent " + character.getAgentNumber() + ".\n"
-            + "If you need help at any stage, try entering a guess and help will be provided.\n"
+            displayText.SetText("Welcome to the city Agent " + character.getAgentNumber() + ".\n\n"
             + "We have received intelligence that there are clues to the attacker's whereabouts inside a list of barrels.\n\n"
             + "A list is an ordered collection of data, with the same data type.\n");
             backButton.SetActive(false);
@@ -45,7 +44,8 @@ public class SetText : MonoBehaviour {
         }
         else if (page == 3) {
             displayText.SetText("We have reason to believe there is a list of barrels in your current vicinity. To access the clue, select a "
-            + "barrel from the list using its index number and the get method as described. The name of the list is 'barrels'.");
+            + "barrel from the list using its index number and the get method as described. The name of the list is 'barrels'.\n"
+            + "Hint: If you need help at any time, enter a guess and help will be provided");
             button.SetActive(false);
             inputField.SetActive(true);
             backButton.SetActive(true);

@@ -37,7 +37,7 @@ public class ShowChallenge : MonoBehaviour
                 // Stop the character from moving. 
                 foreach (GameObject go in character.getParts()) {
                     PlayerMovementController pmc = go.GetComponent(typeof(PlayerMovementController)) as PlayerMovementController;
-                    pmc.movementSpeed = 0;
+                    pmc.UpdateMovementSpeed(0.0f);
                 }
             }
         }

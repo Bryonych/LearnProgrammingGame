@@ -43,7 +43,7 @@ public class CombineLesson : MonoBehaviour
         // Let the character move again   
         foreach (GameObject go in character.getParts()) {
             PlayerMovementController pmc = go.GetComponent(typeof(PlayerMovementController)) as PlayerMovementController;
-            pmc.movementSpeed = 2.5f;
+            pmc.UpdateMovementSpeed(2.5f);
         }
         // Store current challenge number
         character.increaseChallengeNumber();

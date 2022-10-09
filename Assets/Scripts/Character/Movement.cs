@@ -14,6 +14,7 @@ public class Movement {
         this.movementSpeed = movementSpeed;
     }
 
+    // Calculates the new position of the character from user input
     public Vector2 calculate(Vector2 currentPos, Vector2 inputVector) {
         Vector2 direction = GetDirection(inputVector);
         Vector2 movement = inputVector * movementSpeed * direction * Time.fixedDeltaTime;
@@ -21,6 +22,10 @@ public class Movement {
         rotateVector = (direction.y == 1.0 || direction.y == -1.0) ? new Vector2(rotateVector.x, rotateVector.y-0.02f) : rotateVector;
         Vector2 newPos = (direction.y == -1.0 || direction.x == -1.0)? currentPos - rotateVector : currentPos + rotateVector;
         return newPos;
+    }
+
+    public void setMovementSpeed(float speed) {
+        this.movementSpeed = speed;
     }
 
     // Returns the direction the character is moving. 

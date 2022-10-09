@@ -60,7 +60,7 @@ public class StackQueueInput : MonoBehaviour
         // Reinstate character movement
         foreach (GameObject go in character.getParts()) {
             PlayerMovementController pmc = go.GetComponent(typeof(PlayerMovementController)) as PlayerMovementController;
-            pmc.movementSpeed = 2.5f;
+            pmc.UpdateMovementSpeed(2.5f);
         }
         // Store next challenge number in character object
         character.increaseChallengeNumber();

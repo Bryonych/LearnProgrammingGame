@@ -26,6 +26,10 @@ public class PlayerMovementController : MonoBehaviour
         movement = new Movement(movementSpeed);
     }
 
+    public void UpdateMovementSpeed(float speed) {
+        movement.setMovementSpeed(speed);
+    }
+
     // Calculates position, movement and direction and moves the character. 
     void FixedUpdate() {
         Vector2 currentPos = rbody.position;
