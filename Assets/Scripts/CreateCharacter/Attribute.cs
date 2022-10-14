@@ -26,7 +26,7 @@ public class Attribute {
 
     // Creates teh attribute
     public void createAttribute(bool active) {
-        if (sprite == null || controller == null) { return; }
+        // if (sprite == null || controller == null) { return; }
         if (go == null) {
             go = GameObject.Find(name);
         }
